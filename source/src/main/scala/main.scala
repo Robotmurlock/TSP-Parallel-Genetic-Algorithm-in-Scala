@@ -1,6 +1,7 @@
 import scala.io.Source
 import java.util.Scanner
 import java.io.File
+import genetic_algorithm.GA
 
 
 object HelloSbt {
@@ -9,20 +10,22 @@ object HelloSbt {
         val filename = prefix + args(0)
 
         val sc = new Scanner(new File(filename))
-        
-        val n = sc.nextInt()
-        val matrix = Array.ofDim[Int](n,n)
 
-        for(i <- 0 to n-1) {
-            for(j <- 0 to n-1) {
-                matrix(i)(j) = sc.nextInt()
+        val dimension = sc.nextInt()
+        val cost_matrix = Array.ofDim[Double](dimension, dimension)
+
+        for(i <- 0 to dimension-1) {
+            for(j <- 0 to dimension-1) {
+                cost_matrix(i)(j) = sc.nextDouble()
             }
         }
 
+        val ga = new GA(cost_matrix, 1000, 1000, 20, 0.2, 0.01)
+
         // Testing file input
-        for(i <- 0 to n-1) {
-            for(j <- 0 to n-1) {
-                print(matrix(i)(j))
+        for(i <- 0 to dimension-1) {
+            for(j <- 0 to dimension-1) {
+                print(cost_matrix(i)(j))
                 print(' ')
             }
             println()
