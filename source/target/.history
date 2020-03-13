@@ -1,3 +1,38 @@
 compile
 run
 exit
+compile
+run
+compile
+run
+run 1
+run 1123
+run 1.txt
+compile
+run 123
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+exit
