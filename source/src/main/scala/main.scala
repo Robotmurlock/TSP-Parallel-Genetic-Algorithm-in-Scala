@@ -20,8 +20,6 @@ object HelloSbt {
             }
         }
 
-        val ga = new GA(cost_matrix, 1000, 1000, 20, 0.2, 0.01)
-
         // Testing file input
         for(i <- 0 to dimension-1) {
             for(j <- 0 to dimension-1) {
@@ -30,5 +28,8 @@ object HelloSbt {
             }
             println()
         }
+
+        val ga = new GA(cost_matrix, 1000, 100, 20, 0.2, 0.01)
+        ga.run()
     }
 }
