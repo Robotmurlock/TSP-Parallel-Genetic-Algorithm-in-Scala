@@ -8,6 +8,7 @@ package genetic_algorithm {
     class Chromosome(val size: Int, val cost_matrix: Array[Array[Double]]) {
 
         var content = Array.ofDim[Int](size)
+        var fit: Double = -1
         // Knuth shuffles ~ Random Permutation
         // ref: https://en.wikipedia.org/wiki/Random_permutation
 
@@ -23,6 +24,16 @@ package genetic_algorithm {
             content(i) = content(j)
             content(j) = tmp
         }
+
+        def copy() : Chromosome = {
+            var chrom = new Chromosome(size, cost_matrix)
+            for(i <- 0 to size-1) {
+                chrom.content(i) = content(i)
+            }
+            // fitness must be calculated again
+            chrom.fit = -1
+            return chrom
+        }
         
         // returns path as string
         def path() : String = {
@@ -35,13 +46,19 @@ package genetic_algorithm {
         }
 
         // calculates fitness using cost matrix
-        // #TODO: optimize
         def fitness() : Double = {
             var cost: Double = 0
-            for(i <- 0 to size-2) {
-                cost += cost_matrix(content(i))(content(i+1))
+            // If fitness was already calculated then there is no need to calculate again
+            if(this.fit != -1) {
+                cost = this.fit
             }
-            cost += cost_matrix(content(size-1))(content(0))
+            else {
+                for(i <- 0 to size-2) {
+                    cost += cost_matrix(content(i))(content(i+1))
+                }
+                cost += cost_matrix(content(size-1))(content(0))
+                this.fit = cost
+            }
             return(cost)
         }
 
@@ -71,30 +88,82 @@ package genetic_algorithm {
 
         def select(population: Array[Chromosome]) : Chromosome = {
             // #TODO
-//             var length:Int=population.size();
-//             if(length<tournament_size)
-//                 return null
+            // var length:Int=population.size();
+            // if(length<tournament_size)
+            //     return null
             
             var index = Global.random.nextInt(population_size)
             return(population(index))
         }
 
+        def crossover_next_index(index: Int, size: Int) : Int = {
+            var next = index + 1
+            if(next == size) {
+                next = 0
+            }
+            return(next)
+        }
+
         def crossover(p1: Chromosome, p2: Chromosome) : (Chromosome, Chromosome) = {
-            // #TODO
-            return(p1, p2)
+            var c1 = p1.copy()
+            var c2 = p2.copy()
+
+            var first_random: Int = Global.random.nextInt(p1.size)
+            var second_random: Int = Global.random.nextInt(p1.size)
+
+            if(second_random < first_random) {
+                var tmp = first_random
+                first_random = second_random
+                second_random = tmp
+            }
+
+            for(i <- first_random to second_random-1) {
+                c1.content(i) = p2.content(i)
+                c2.content(i) = p1.content(i)
+            }
+
+            var c2_used = p1.content.slice(first_random, second_random).toSet
+            var c1_used = p2.content.slice(first_random, second_random).toSet
+
+            var c1_index = second_random
+            var c2_index = second_random
+
+            for(i <- second_random to p1.size-1) {
+                if(!(c1_used contains p1.content(i))) {
+                    c1.content(c1_index) = p1.content(i)
+                    c1_index = crossover_next_index(c1_index, p1.size)
+                }
+                if(!(c2_used contains p2.content(i))) {
+                    c2.content(c2_index) = p2.content(i)
+                    c2_index = crossover_next_index(c2_index, p1.size)
+                }
+            }
+
+            for(i <- 0 to second_random-1) {
+                if(!(c1_used contains p1.content(i))) {
+                    c1.content(c1_index) = p1.content(i)
+                    c1_index = crossover_next_index(c1_index, p1.size)
+                }
+                if(!(c2_used contains p2.content(i))) {
+                    c2.content(c2_index) = p2.content(i)
+                    c2_index = crossover_next_index(c2_index, p1.size)
+                }
+            }
+
+            return(c1, c2)
         }
 
         def mutate(c: Chromosome) : Chromosome = {
-            // #XXX
-            var mutate_random:Float=Global.random.nextFloat();
-            if(mutate_random<mutation_rate){
-                var first_random:Int=Global.random.nextInt(c.size)
-                var second_random:Int=Global.random.nextInt(c.size)
-                var tmp=c.content(first_random)
-                c.content(first_random)=c.content(second_random)
-                c.content(second_random)=tmp
+            var mutate_random: Float = Global.random.nextFloat();
+            var mutated = c.copy()
+            if(mutate_random < mutation_rate) {
+                var first_random: Int = Global.random.nextInt(mutated.size)
+                var second_random: Int = Global.random.nextInt(mutated.size)
+                var tmp = mutated.content(first_random)
+                mutated.content(first_random) = mutated.content(second_random)
+                mutated.content(second_random) = tmp
             }
-            return(c)
+            return(mutated)
         }
 
         def best_chromosome(population: Array[Chromosome]) : Chromosome = {
@@ -112,17 +181,17 @@ package genetic_algorithm {
 
             for(i <- 0 to max_iterations-1) {
                 var new_population = Array.ofDim[Chromosome](population_size)
-                // Elitism (#TODO)
+                // Elitism (#MAYBE)
 
                 for (j <- 0 to population_size/2-1) {
                     // Selection (#TODO)
                     var p1 = select(population)
                     var p2 = select(population)
 
-                    // Crossover (#TODO)
+                    // Crossover 
                     var (c1, c2) = crossover(p1, p2)
 
-                    // Mutation (#TODO)
+                    // Mutation 
                     c1 = mutate(c1)
                     c2 = mutate(c2)
 
@@ -130,10 +199,10 @@ package genetic_algorithm {
                     new_population(2*j+1) = c2
                 }
 
-                // Replacement (#TODO)
+                // Replacement
                 population = new_population
 
-                // Algorithm status (#TODO)
+                // Algorithm status 
                 var bc = best_chromosome(population)
                 println("Iteration: " + i.toString() + ", " + bc.toString())
             }

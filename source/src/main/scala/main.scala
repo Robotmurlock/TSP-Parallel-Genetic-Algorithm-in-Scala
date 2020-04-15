@@ -29,7 +29,7 @@ object HelloSbt {
             println()
         }
 
-        val ga = new GA(cost_matrix, 10, 10, 20, 0.2, 0.01)
+        val ga = new GA(cost_matrix, 10, 100, 20, 0.2, 0.01)
         ga.run()
     }
 }
