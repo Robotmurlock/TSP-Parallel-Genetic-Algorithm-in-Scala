@@ -1,4 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:87:35: value or is not a member of Boolean[0m
-[0m[[0m[31merror[0m] [0m[0m                if(result == null or population(i).fitness() < result.fitness()) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:89:26: genetic_algorithm.Chromosome does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m                var tmp=c(first_random)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:90:17: value update is not a member of genetic_algorithm.Chromosome[0m
+[0m[[0m[31merror[0m] [0m[0m                c(first_random)=c(second_random)[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:90:34: genetic_algorithm.Chromosome does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m                c(first_random)=c(second_random)[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:91:17: value update is not a member of genetic_algorithm.Chromosome[0m
+[0m[[0m[31merror[0m] [0m[0m                c(second_random)=tmp[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

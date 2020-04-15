@@ -71,6 +71,10 @@ package genetic_algorithm {
 
         def select(population: Array[Chromosome]) : Chromosome = {
             // #TODO
+//             var length:Int=population.size();
+//             if(length<tournament_size)
+//                 return null
+            
             var index = Global.random.nextInt(population_size)
             return(population(index))
         }
@@ -81,7 +85,15 @@ package genetic_algorithm {
         }
 
         def mutate(c: Chromosome) : Chromosome = {
-            // #TODO
+            // #XXX
+            var mutate_random:Float=Global.random.nextFloat();
+            if(mutate_random<mutation_rate){
+                var first_random:Int=Global.random.nextInt(c.size)
+                var second_random:Int=Global.random.nextInt(c.size)
+                var tmp=c.content(first_random)
+                c.content(first_random)=c.content(second_random)
+                c.content(second_random)=tmp
+            }
             return(c)
         }
 
