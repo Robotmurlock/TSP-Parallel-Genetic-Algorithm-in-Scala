@@ -1,16 +1,52 @@
 import scala.util.Random
 
 package genetic_algorithm {
-    class Chromosome(val size: Int) {
+    object Global {
+        val random = new Random
+    }
 
-        // #TODO
-        def fitness() : Int = {
-            return 0
+    class Chromosome(val size: Int, val cost_matrix: Array[Array[Double]]) {
+
+        var content = Array.ofDim[Int](size)
+        // Knuth shuffles ~ Random Permutation
+        // ref: https://en.wikipedia.org/wiki/Random_permutation
+
+        // Init content: 1 2 3 ...
+        for(i <- 0 to size-1) {
+            content(i) = i
         }
 
-        // #TODO
+        // Knuth shuffles:
+        for(i <- 0 to size-2) {
+            var j = i + Global.random.nextInt(size-i)
+            var tmp: Int = content(i)
+            content(i) = content(j)
+            content(j) = tmp
+        }
+        
+        // returns path as string
+        def path() : String = {
+            var out = ""
+            for(i <- 0 to size-2) {
+                out += content(i).toString() + " -> "
+            }
+            out += content(size-1).toString()
+            return(out)
+        }
+
+        // calculates fitness using cost matrix
+        // #TODO: optimize
+        def fitness() : Double = {
+            var cost: Double = 0
+            for(i <- 0 to size-2) {
+                cost += cost_matrix(content(i))(content(i+1))
+            }
+            cost += cost_matrix(content(size-1))(content(0))
+            return(cost)
+        }
+
         override def toString() : String = { 
-            return(fitness().toString()); 
+            return("path: " + path() + ", fitness: " + fitness().toString()); 
         } 
     }
 
@@ -21,15 +57,13 @@ package genetic_algorithm {
              val elitism_ratio: Double, 
              val mutation_rate: Double) {
         
-        val random = new Random
         val chromosome_size = cost_matrix.size
-        var population: Array[Chromosome] = init_population(chromosome_size)
 
         def init_population(size: Int) : Array[Chromosome] = {
             var new_population = Array.ofDim[Chromosome](population_size)
             
             for(i <- 0 to population_size-1) {
-                new_population(i) = new Chromosome(size)
+                new_population(i) = new Chromosome(size, cost_matrix)
             }
 
             return(new_population)
@@ -37,7 +71,7 @@ package genetic_algorithm {
 
         def select(population: Array[Chromosome]) : Chromosome = {
             // #TODO
-            var index = random.nextInt(population_size)
+            var index = Global.random.nextInt(population_size)
             return(population(index))
         }
 
@@ -52,14 +86,19 @@ package genetic_algorithm {
         }
 
         def best_chromosome(population: Array[Chromosome]) : Chromosome = {
-            // $TODO
-            return(population(0))
+            var result: Chromosome = null
+            for(i <- 0 to population_size-1) {
+                if(result == null || population(i).fitness() < result.fitness()) {
+                    result = population(i)
+                }
+            }
+            return(result)
         }
 
         def run() {
-            var population = init_population(population_size)
+            var population: Array[Chromosome] = init_population(chromosome_size)
 
-            for(i <- 0 to max_iterations) {
+            for(i <- 0 to max_iterations-1) {
                 var new_population = Array.ofDim[Chromosome](population_size)
                 // Elitism (#TODO)
 
@@ -84,7 +123,7 @@ package genetic_algorithm {
 
                 // Algorithm status (#TODO)
                 var bc = best_chromosome(population)
-                println("Iteration: " + i.toString() + ", fitness: " + bc.toString())
+                println("Iteration: " + i.toString() + ", " + bc.toString())
             }
         }
     }
