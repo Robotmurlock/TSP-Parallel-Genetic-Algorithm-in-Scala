@@ -1,5 +1,6 @@
 import scala.util.Random
 import scala.util.Sorting
+import java.io._
 
 package genetic_algorithm {
     object Global {
@@ -37,10 +38,10 @@ package genetic_algorithm {
         }
         
         // returns path as string
-        def path() : String = {
+        def path(delimiter: String = " -> ") : String = {
             var out = ""
             for(i <- 0 to size-2) {
-                out += content(i).toString() + " -> "
+                out += content(i).toString() + delimiter
             }
             out += content(size-1).toString()
             return(out)
@@ -73,7 +74,8 @@ package genetic_algorithm {
              val max_iterations: Int,
              var tournament_size: Int,
              val elitism_ratio: Double, 
-             val mutation_rate: Double) {
+             val mutation_rate: Double,
+             val log: Boolean) {
         
         val chromosome_size = cost_matrix.size
 
@@ -198,9 +200,25 @@ package genetic_algorithm {
             return(result)
         }
 
+        def results_to_csv(data: Array[Chromosome]) = {
+            val filename = "result.csv"
+            val file = new File(filename)
+            val writer = new BufferedWriter(new FileWriter(file))
+            writer.write("iteration, fitness, path\n")
+            for(i <- 0 until max_iterations) {
+                if(log) {
+                    println("Iteration: " + i.toString() + ", " + data(i).toString())
+                }
+                writer.write(i.toString + ", " + data(i).fitness().toString() + ", \"" + data(i).path(";") + "\"\n")
+            }
+            writer.close()
+        }
+
         def run() {
             var population: Array[Chromosome] = init_population(chromosome_size)
             val elites_cnt: Int = (population_size*elitism_ratio).toInt
+
+            var data: Array[Chromosome] = Array.ofDim[Chromosome](max_iterations)
 
             for(i <- 0 until max_iterations) {
                 var new_population = Array.ofDim[Chromosome](population_size)
@@ -231,8 +249,12 @@ package genetic_algorithm {
 
                 // Algorithm status 
                 var bc = best_chromosome(population)
-                println("Iteration: " + i.toString() + ", " + bc.toString())
+                //println("Iteration: " + i.toString() + ", " + bc.toString())
+
+                data(i) = bc.copy()
             }
+
+            results_to_csv(data)
         }
     }
 }
