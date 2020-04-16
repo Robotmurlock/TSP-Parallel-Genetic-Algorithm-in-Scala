@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:94:40: not found: value Chromosome[0m
-[0m[[0m[31merror[0m] [0m[0m            var random_array=new Array(Chromosome)(tournament_size)[0m
-[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:201:45: No implicit Ordering defined for genetic_algorithm.Chromosome.[0m
+[0m[[0m[31merror[0m] [0m[0m                scala.util.Sorting.quickSort(population)[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

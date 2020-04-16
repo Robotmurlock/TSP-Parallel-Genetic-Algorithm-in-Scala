@@ -675,23 +675,23 @@
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.5!scalatest_2.12.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 296ms :: artifacts dl 26ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT compile produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT runtime produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT test produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT provided produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT optional produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT compile-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT runtime-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT test-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT plugin produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT pom produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT scala-tool produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (296ms resolve - 26ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(bundle)[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 182ms :: artifacts dl 3ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT compile produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT runtime produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT test produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT provided produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT optional produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT compile-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT runtime-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT test-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT plugin produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT pom produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for com.example#source_2.12;0.1.0-SNAPSHOT scala-tool produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.12/resolution-cache/reports/com.example-source_2.12-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (182ms resolve - 3ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m

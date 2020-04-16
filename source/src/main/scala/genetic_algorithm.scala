@@ -1,4 +1,5 @@
 import scala.util.Random
+import scala.util.Sorting
 
 package genetic_algorithm {
     object Global {
@@ -13,12 +14,12 @@ package genetic_algorithm {
         // ref: https://en.wikipedia.org/wiki/Random_permutation
 
         // Init content: 1 2 3 ...
-        for(i <- 0 to size-1) {
+        for(i <- 0 until size) {
             content(i) = i
         }
 
         // Knuth shuffles:
-        for(i <- 0 to size-2) {
+        for(i <- 1 to size-2) {
             var j = i + Global.random.nextInt(size-i)
             var tmp: Int = content(i)
             content(i) = content(j)
@@ -27,7 +28,7 @@ package genetic_algorithm {
 
         def copy() : Chromosome = {
             var chrom = new Chromosome(size, cost_matrix)
-            for(i <- 0 to size-1) {
+            for(i <- 0 until size) {
                 chrom.content(i) = content(i)
             }
             // fitness must be calculated again
@@ -70,16 +71,23 @@ package genetic_algorithm {
     class GA(val cost_matrix: Array[Array[Double]],
              val population_size: Int, 
              val max_iterations: Int,
-             val tournament_size: Int,
+             var tournament_size: Int,
              val elitism_ratio: Double, 
              val mutation_rate: Double) {
         
         val chromosome_size = cost_matrix.size
 
+        if(tournament_size > population_size) {
+            println("Tournament size(" + tournament_size.toString() + ") is bigger than population size(" + population_size.toString() + "). Reducing tournament size to population size.")
+            tournament_size = population_size
+        }
+
+        def compare(a: Chromosome, b: Chromosome) = a.fitness() compare b.fitness()
+
         def init_population(size: Int) : Array[Chromosome] = {
             var new_population = Array.ofDim[Chromosome](population_size)
             
-            for(i <- 0 to population_size-1) {
+            for(i <- 0 until population_size) {
                 new_population(i) = new Chromosome(size, cost_matrix)
             }
 
@@ -87,21 +95,18 @@ package genetic_algorithm {
         }
 
         def select(population: Array[Chromosome]) : Chromosome = {
-            // #XXX
-            var length:Int=population.length;
-            if(length<tournament_size)
-                return null
-            var random_array=new Array[Chromosome](tournament_size)
-            for(i<-0 until tournament_size){
-                var r:Int=Global.random.nextInt(tournament_size-1)
-                random_array(i)=population(r)
+            var random_array = new Array[Chromosome](tournament_size)
+            for(i <- 0 until tournament_size){
+                var r: Int = Global.random.nextInt(population_size-1)
+                random_array(i) = population(r)
             }
-            var min:Double=random_array(0).fitness()
-            var index:Int =0 
-            for(i<-1 until tournament_size){
-                if(random_array(i).fitness()<min){
-                    min=random_array(i).fitness
-                    index=i
+
+            var min: Double = random_array(0).fitness()
+            var index: Int = 0 
+            for(i <- 1 until tournament_size){
+                if(random_array(i).fitness() < min){
+                    min = random_array(i).fitness
+                    index = i
                 }
             }
             return(population(index))
@@ -128,7 +133,7 @@ package genetic_algorithm {
                 second_random = tmp
             }
 
-            for(i <- first_random to second_random-1) {
+            for(i <- first_random until second_random) {
                 c1.content(i) = p2.content(i)
                 c2.content(i) = p1.content(i)
             }
@@ -139,7 +144,7 @@ package genetic_algorithm {
             var c1_index = second_random
             var c2_index = second_random
 
-            for(i <- second_random to p1.size-1) {
+            for(i <- second_random until p1.size) {
                 if(!(c1_used contains p1.content(i))) {
                     c1.content(c1_index) = p1.content(i)
                     c1_index = crossover_next_index(c1_index, p1.size)
@@ -150,7 +155,7 @@ package genetic_algorithm {
                 }
             }
 
-            for(i <- 0 to second_random-1) {
+            for(i <- 0 until second_random) {
                 if(!(c1_used contains p1.content(i))) {
                     c1.content(c1_index) = p1.content(i)
                     c1_index = crossover_next_index(c1_index, p1.size)
@@ -168,8 +173,8 @@ package genetic_algorithm {
             var mutate_random: Float = Global.random.nextFloat();
             var mutated = c.copy()
             if(mutate_random < mutation_rate) {
-                var first_random: Int = Global.random.nextInt(mutated.size)
-                var second_random: Int = Global.random.nextInt(mutated.size)
+                var first_random: Int = 1 + Global.random.nextInt(mutated.size-1)
+                var second_random: Int = 1 + Global.random.nextInt(mutated.size-1)
                 var tmp = mutated.content(first_random)
                 mutated.content(first_random) = mutated.content(second_random)
                 mutated.content(second_random) = tmp
@@ -179,7 +184,7 @@ package genetic_algorithm {
 
         def best_chromosome(population: Array[Chromosome]) : Chromosome = {
             var result: Chromosome = null
-            for(i <- 0 to population_size-1) {
+            for(i <- 0 until population_size) {
                 if(result == null || population(i).fitness() < result.fitness()) {
                     result = population(i)
                 }
@@ -189,13 +194,18 @@ package genetic_algorithm {
 
         def run() {
             var population: Array[Chromosome] = init_population(chromosome_size)
+            val elites_cnt: Int = (population_size*elitism_ratio).toInt
 
-            for(i <- 0 to max_iterations-1) {
+            for(i <- 0 until max_iterations) {
                 var new_population = Array.ofDim[Chromosome](population_size)
-                // Elitism (#MAYBE)
+                // Elitism
+                scala.util.Sorting.quickSort(population)(compare)
+                for(j <- 0 until elites_cnt) {
+                    new_population(j) = population(j)
+                }
 
-                for (j <- 0 to population_size/2-1) {
-                    // Selection (#TODO)
+                for(j <- elites_cnt/2 until population_size/2) {
+                    // Selection 
                     var p1 = select(population)
                     var p2 = select(population)
 

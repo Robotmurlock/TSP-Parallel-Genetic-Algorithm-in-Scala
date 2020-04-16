@@ -14,6 +14,7 @@ object HelloSbt {
         val dimension = sc.nextInt()
         val cost_matrix = Array.ofDim[Double](dimension, dimension)
 
+        println("Cost matrix: ")
         for(i <- 0 to dimension-1) {
             for(j <- 0 to dimension-1) {
                 cost_matrix(i)(j) = sc.nextDouble()
@@ -29,7 +30,7 @@ object HelloSbt {
             println()
         }
 
-        val ga = new GA(cost_matrix, 10, 100, 20, 0.2, 0.01)
+        val ga = new GA(cost_matrix, 12, 10, 2, 0.2, 0.01)
         ga.run()
     }
 }
