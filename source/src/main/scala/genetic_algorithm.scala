@@ -94,6 +94,12 @@ package genetic_algorithm {
             return(new_population)
         }
 
+        class MainThread() extends Runnable {
+            def run() {
+                
+            }
+        }
+
         def select(population: Array[Chromosome]) : Chromosome = {
             var random_array = new Array[Chromosome](tournament_size)
             for(i <- 0 until tournament_size){
