@@ -234,3 +234,5 @@ compile
 run 1.txt
 compile
 run 1.txt
+compile
+exit

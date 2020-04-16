@@ -87,12 +87,23 @@ package genetic_algorithm {
         }
 
         def select(population: Array[Chromosome]) : Chromosome = {
-            // #TODO
-            // var length:Int=population.size();
-            // if(length<tournament_size)
-            //     return null
-            
-            var index = Global.random.nextInt(population_size)
+            // #XXX
+            var length:Int=population.length;
+            if(length<tournament_size)
+                return null
+            var random_array=new Array[Chromosome](tournament_size)
+            for(i<-0 until tournament_size){
+                var r:Int=Global.random.nextInt(tournament_size-1)
+                random_array(i)=population(r)
+            }
+            var min:Double=random_array(0).fitness()
+            var index:Int =0 
+            for(i<-1 until tournament_size){
+                if(random_array(i).fitness()<min){
+                    min=random_array(i).fitness
+                    index=i
+                }
+            }
             return(population(index))
         }
 
