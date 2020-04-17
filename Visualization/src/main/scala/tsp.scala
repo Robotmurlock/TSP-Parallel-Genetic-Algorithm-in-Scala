@@ -9,6 +9,7 @@ import scala.io.Source
 import scala.collection.immutable.List
 import scala.collection.mutable.ArrayBuffer
 import scalafx.scene.image.ImageView
+import scalafx.Includes._
 
 
 object tsp extends JFXApp{
@@ -31,8 +32,6 @@ object tsp extends JFXApp{
       val fileOrder = "src/2.txt"
       
       val iterLine = Source.fromFile(fileOrder).getLines
-      
-      
        
       var Order = ArrayBuffer[Int]()
        
