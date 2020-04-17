@@ -1,6 +1,7 @@
 import scala.util.Random
 import scala.util.Sorting
 import java.io._
+import java.util.concurrent.atomic.AtomicInteger
 
 package genetic_algorithm {
     object Global {
@@ -75,9 +76,12 @@ package genetic_algorithm {
              var tournament_size: Int,
              val elitism_ratio: Double, 
              val mutation_rate: Double,
+             val num_of_threads: Int,
              val log: Boolean) {
         
         val chromosome_size = cost_matrix.size
+        val elites_cnt: Int = (population_size*elitism_ratio).toInt
+        var atomic_index: AtomicInteger = new AtomicInteger(elites_cnt/2)
 
         if(tournament_size > population_size) {
             println("Tournament size(" + tournament_size.toString() + ") is bigger than population size(" + population_size.toString() + "). Reducing tournament size to population size.")
@@ -199,65 +203,66 @@ package genetic_algorithm {
             val file = new File(filename)
             val writer = new BufferedWriter(new FileWriter(file))
             writer.write("iteration, fitness, path\n")
-            for(i <- 0 until max_iterations) {
-                if(log) {
-                    println("Iteration: " + i.toString() + ", " + data(i).toString())
-                }
-                writer.write(i.toString + ", " + data(i).fitness().toString() + ", \"" + data(i).path(";") + "\"\n")
+            if(log) {
+                (0 until max_iterations).foreach(
+                    i => println("Iteration: " + i.toString() + ", " + data(i).toString()))
             }
+            (0 until max_iterations).foreach(
+                i => writer.write(i.toString + ", " + data(i).fitness().toString() + ", \"" + data(i).path(";") + "\"\n"))
             writer.close()
         }
 
-        class EvolutionRunnable(population: Array[Chromosome], new_population: Array[Chromosome], index: Int) extends Runnable {
+        class EvolutionRunnable(population: Array[Chromosome], new_population: Array[Chromosome]) extends Runnable {
             def run() {
-                // Selection 
-                var p1 = select(population)
-                var p2 = select(population)
 
-                // Crossover 
-                var (c1, c2) = crossover(p1, p2)
+                var index: Int = atomic_index.getAndIncrement()
 
-                // Mutation 
-                c1 = mutate(c1)
-                c2 = mutate(c2)
-
-                new_population(2*index) = c1
-                new_population(2*index+1) = c2
+                while(index < population_size/2) {
+                    // Selection 
+                    var p1 = select(population)
+                    var p2 = select(population)
+                    // Crossover 
+                    var (c1, c2) = crossover(p1, p2)
+                    // Mutation 
+                    c1 = mutate(c1)
+                    c2 = mutate(c2)
+                    // adding mutated chromosomes to new population
+                    new_population(2*index) = c1
+                    new_population(2*index+1) = c2
+                    // updating global index
+                    index = atomic_index.getAndIncrement()
+                }
             }
         }
 
         def run() {
             var population: Array[Chromosome] = init_population(chromosome_size)
-            val elites_cnt: Int = (population_size*elitism_ratio).toInt
-
             var data: Array[Chromosome] = Array.ofDim[Chromosome](max_iterations)
 
             for(i <- 0 until max_iterations) {
                 var new_population = Array.ofDim[Chromosome](population_size)
+                atomic_index.set(elites_cnt/2)
+
                 // Elitism
                 scala.util.Sorting.quickSort(population)(compare)
-                for(j <- 0 until elites_cnt) {
-                    new_population(j) = population(j)
-                }
+                (0 until elites_cnt).foreach(j => new_population(j) = population(j))
 
-                var threads_cnt: Int = (population_size-elites_cnt)/2
-                var threads: Array[Thread] = Array.ofDim[Thread](threads_cnt)
-                for(j <- 0 until threads_cnt) {
-                    var index: Int = j + elites_cnt/2
-                    threads(j) = new Thread(new EvolutionRunnable(population, new_population, index))
-                    threads(j).start()
-                }
-
-                for(j <- 0 until threads_cnt) {
-                    threads(j).join()
-                }
+                // Creating new generation using threads
+                var threads: Array[Thread] = 
+                    (for(j <- 0 until num_of_threads) 
+                        yield (new Thread(new EvolutionRunnable(population, new_population)))
+                    ).toArray
+                threads.foreach(t => t.start())
+                threads.foreach(t => t.join())
 
                 // Replacement
                 population = new_population
 
                 // Algorithm status 
                 var bc = best_chromosome(population)
-                //println("Iteration: " + i.toString() + ", " + bc.toString())
+                if(log) {
+                    println("Iteration: " + i.toString() + ", " + bc.toString())
+                }
 
                 data(i) = bc.copy()
             }

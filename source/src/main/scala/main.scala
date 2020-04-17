@@ -34,7 +34,7 @@ object Main {
             }
         }
 
-        val ga = new GA(cost_matrix, 100, 10, 1, 0.2, 0.01, log)
+        val ga = new GA(cost_matrix, 100, 100, 1, 0.2, 0.01, 10, log)
         ga.run()
     }
 }
