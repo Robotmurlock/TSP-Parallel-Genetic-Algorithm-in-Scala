@@ -3,7 +3,6 @@ import java.util.Scanner
 import java.io.File
 import genetic_algorithm.GA
 
-
 object Main {
     def main(args: Array[String]) = {
         val prefix = "src/main/tsp_examples/"
