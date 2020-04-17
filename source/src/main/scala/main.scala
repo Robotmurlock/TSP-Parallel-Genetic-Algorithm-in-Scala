@@ -15,16 +15,16 @@ object Main {
         val dimension = sc.nextInt()
         val cost_matrix = Array.ofDim[Double](dimension, dimension)
 
-            println("Cost matrix: ")
-            for(i <- 0 to dimension-1) {
-                for(j <- 0 to dimension-1) {
-                    cost_matrix(i)(j) = sc.nextDouble()
-                }
+        for(i <- 0 to dimension-1) {
+            for(j <- 0 to dimension-1) {
+                cost_matrix(i)(j) = sc.nextDouble()
             }
+        }
 
 
         // Testing file input
         if(log) {
+            println("Cost matrix: ")
             for(i <- 0 to dimension-1) {
                 for(j <- 0 to dimension-1) {
                     print(cost_matrix(i)(j))
@@ -34,7 +34,7 @@ object Main {
             }
         }
 
-        val ga = new GA(cost_matrix, 16, 10, 1, 0.2, 0.01, log)
+        val ga = new GA(cost_matrix, 100, 10, 1, 0.2, 0.01, log)
         ga.run()
     }
 }

@@ -96,12 +96,6 @@ package genetic_algorithm {
             return(new_population)
         }
 
-        class MainThread() extends Runnable {
-            def run() {
-                
-            }
-        }
-
         def select(population: Array[Chromosome]) : Chromosome = {
             var random_array = new Array[Chromosome](tournament_size)
             for(i <- 0 until tournament_size){
@@ -214,6 +208,24 @@ package genetic_algorithm {
             writer.close()
         }
 
+        class EvolutionRunnable(population: Array[Chromosome], new_population: Array[Chromosome], index: Int) extends Runnable {
+            def run() {
+                // Selection 
+                var p1 = select(population)
+                var p2 = select(population)
+
+                // Crossover 
+                var (c1, c2) = crossover(p1, p2)
+
+                // Mutation 
+                c1 = mutate(c1)
+                c2 = mutate(c2)
+
+                new_population(2*index) = c1
+                new_population(2*index+1) = c2
+            }
+        }
+
         def run() {
             var population: Array[Chromosome] = init_population(chromosome_size)
             val elites_cnt: Int = (population_size*elitism_ratio).toInt
@@ -228,20 +240,16 @@ package genetic_algorithm {
                     new_population(j) = population(j)
                 }
 
-                for(j <- elites_cnt/2 until population_size/2) {
-                    // Selection 
-                    var p1 = select(population)
-                    var p2 = select(population)
+                var threads_cnt: Int = (population_size-elites_cnt)/2
+                var threads: Array[Thread] = Array.ofDim[Thread](threads_cnt)
+                for(j <- 0 until threads_cnt) {
+                    var index: Int = j + elites_cnt/2
+                    threads(j) = new Thread(new EvolutionRunnable(population, new_population, index))
+                    threads(j).start()
+                }
 
-                    // Crossover 
-                    var (c1, c2) = crossover(p1, p2)
-
-                    // Mutation 
-                    c1 = mutate(c1)
-                    c2 = mutate(c2)
-
-                    new_population(2*j) = c1
-                    new_population(2*j+1) = c2
+                for(j <- 0 until threads_cnt) {
+                    threads(j).join()
                 }
 
                 // Replacement
