@@ -2,7 +2,7 @@
 Implementation of Parallel Genetic Algorithm in Scala for solving Travelling Salesman Problem.
 
 # To run genetic algorithm:
-`position in genetic_algoritm/sources`<br>
+`position in genetic_algoritm`<br>
 `sbt`<br>
 `compile`<br>
 `run 1.txt`<br>
@@ -11,4 +11,4 @@ Implementation of Parallel Genetic Algorithm in Scala for solving Travelling Sal
 `position in visualization`<br>
 `sbt`<br>
 `compile`<br>
-`run 1.txt`<br>
+`run`<br>
