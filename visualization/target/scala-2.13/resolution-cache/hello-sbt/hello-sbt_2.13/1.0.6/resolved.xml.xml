@@ -4,7 +4,7 @@
 		module="hello-sbt_2.13"
 		revision="1.0.6"
 		status="integration"
-		publication="20200418180522"
+		publication="20200419012300"
 	>
 		<description>
 		Hello SBT

@@ -7,7 +7,7 @@
 		revision="1.0.6"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20200418180522"/>
+		date="20200419012300"/>
 	<dependencies>
 		<module organisation="org.openjfx" name="javafx-web">
 			<revision name="12.0.2" status="release" pubdate="20190727101841" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
@@ -101,38 +101,38 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.13.1" status="release" pubdate="20190918105106" resolver="public" artresolver="public" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+			<revision name="2.13.1" status="release" pubdate="20190918105106" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
 				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="1810" time="116" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.13.1.xml" searched="true" original-local-location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.13.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom"/>
+				<metadata-artifact status="no" details="" size="2866" time="0" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.13.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom"/>
 				<caller organisation="org.scalafx" name="scalafx_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="12.0.2-R18"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="successful" details="" size="3607717" time="2985" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.1.jar">
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3607717" time="0" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalafx" name="scalafx_2.13">
-			<revision name="12.0.2-R18" status="release" pubdate="20190910055728" resolver="public" artresolver="public" homepage="http://www.scalafx.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+			<revision name="12.0.2-R18" status="release" pubdate="20190910055728" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalafx.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="BSD" url="https://github.com/scalafx/scalafx/blob/master/LICENSE.txt"/>
-				<metadata-artifact status="successful" details="" size="2513" time="116" location="C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\ivy-12.0.2-R18.xml" searched="true" original-local-location="C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\ivy-12.0.2-R18.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom"/>
+				<metadata-artifact status="no" details="" size="2964" time="0" location="C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\ivy-12.0.2-R18.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom"/>
 				<caller organisation="hello-sbt" name="hello-sbt_2.13" conf="compile" rev="12.0.2-R18" rev-constraint-default="12.0.2-R18" rev-constraint-dynamic="12.0.2-R18" callerrev="1.0.6"/>
 				<artifacts>
-					<artifact name="scalafx_2.13" type="jar" ext="jar" status="successful" details="" size="3458128" time="3078" location="C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\jars\scalafx_2.13-12.0.2-R18.jar">
+					<artifact name="scalafx_2.13" type="jar" ext="jar" status="no" details="" size="3458128" time="0" location="C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\jars\scalafx_2.13-12.0.2-R18.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.13.1" status="release" pubdate="20190918105936" resolver="public" artresolver="public" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+			<revision name="2.13.1" status="release" pubdate="20190918105936" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.scala-lang.org/" extra-info.apiURL="https://www.scala-lang.org/api/2.13.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
 				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="1600" time="174" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\ivy-2.13.1.xml" searched="true" original-local-location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\ivy-2.13.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom"/>
+				<metadata-artifact status="no" details="" size="2691" time="0" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\ivy-2.13.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="2.13.1"/>
 				<caller organisation="hello-sbt" name="hello-sbt_2.13" conf="compile" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="1.0.6"/>
 				<caller organisation="org.scalafx" name="scalafx_2.13" conf="default, compile, runtime, master" rev="2.13.1" rev-constraint-default="2.13.1" rev-constraint-dynamic="2.13.1" callerrev="12.0.2-R18"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="successful" details="" size="5721063" time="3261" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.1.jar">
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5721063" time="0" location="C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar"/>
 					</artifact>
 				</artifacts>

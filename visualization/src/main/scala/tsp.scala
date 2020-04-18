@@ -41,9 +41,9 @@ object tsp extends JFXApp{
       
       content = List(view, border)
       
-      onMousePressed = (e:MouseEvent) => {
-        println(e.x, e.y)
-      }
+      //onMousePressed = (e:MouseEvent) => {
+      //  println(e.x, e.y)
+      //}
       
       
       var Points = ArrayBuffer[vect]()
@@ -78,10 +78,12 @@ object tsp extends JFXApp{
         Points.last.named(coordinates(2))
       }
       
+      Salesman.x = Points(0).x
+      Salesman.y = Points(0).y
       
-      println("Test 1")
+      
 
-      val SalesmanSpeed = 10
+      val SalesmanSpeed = 2
       
       val SalesmanMov = new vect(0, 0)
 
@@ -100,11 +102,10 @@ object tsp extends JFXApp{
         gc.drawImage(img, 0, 0)
         
         
-        
         if(Visited == Order.size){
           Order = ArrayBuffer[Int]()
-          Salesman.x = 0
-          Salesman.y = 0
+		  Salesman.x = Points(0).x
+		  Salesman.y = Points(0).y
           Visited = 0
           
           if(iterLine.hasNext){
@@ -124,7 +125,10 @@ object tsp extends JFXApp{
               visitedCities(i) = false
             }
           }
+          Thread.sleep(1000)
         }
+        
+        
         
         if(Visited < Order.size && (Salesman.x - Points(Order(Visited)).x).abs <= SalesmanSpeed && (Salesman.y - Points(Order(Visited)).y).abs <= SalesmanSpeed){
           visitedCities(Order(Visited)) = true
@@ -138,12 +142,6 @@ object tsp extends JFXApp{
         }
         
         
-        gc.fill = Color.Cyan
-        Salesman.x = Salesman.x + SalesmanMov.x*SalesmanSpeed
-        Salesman.y = Salesman.y + SalesmanMov.y*SalesmanSpeed
-        gc.fillRect(Salesman.x, Salesman.y, 10, 10)
-        
-        
         for(i <- 0 to Points.size - 1){
           if(visitedCities(i) == true)
             gc.fill = Color.Pink
@@ -151,6 +149,12 @@ object tsp extends JFXApp{
             gc.fill = Color.Yellow
           gc.fillOval(Points(i).x, Points(i).y, 20, 20)
         }
+        
+        
+        gc.fill = Color.Cyan
+        Salesman.x = Salesman.x + SalesmanMov.x*SalesmanSpeed
+        Salesman.y = Salesman.y + SalesmanMov.y*SalesmanSpeed
+        gc.fillRect(Salesman.x, Salesman.y, 10, 10)
       }
       timer.start()
     }

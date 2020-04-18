@@ -1,23 +1,23 @@
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	removed:Set(C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\src\main\scala\genetic_algorithm.scala, C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\src\main\scala\main.scala, C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\src\main\scala\vect.scala, C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\src\main\scala\tsp.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	added: Set(C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\genetic_algorithm.scala, C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\main.scala, C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala, C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\vect.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(vect, genetic_algorithm.GA, main, genetic_algorithm.GA.EvolutionRunnable, genetic_algorithm.Global, genetic_algorithm.Chromosome, tsp)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(tsp)[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 4 sources: invalidated sources (8) exceeded 50.0% of all sources[0m
-[0m[[0m[0minfo[0m] [0m[0mCompiling 4 Scala sources to C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(tsp)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala)[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 656e088a for Scala compiler version 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 6b3d43d0 for Scala compiler version 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-unchecked[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-deprecation[0m
@@ -28,7 +28,7 @@
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_181\jre\classes;C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.13.1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\classes;C:\Users\Filip\.ivy2\cache\org.scalafx\scalafx_2.13\jars\scalafx_2.13-12.0.2-R18.jar;C:\Users\Filip\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.13.1.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-base\jars\javafx-base-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-controls\jars\javafx-controls-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-graphics\jars\javafx-graphics-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-fxml\jars\javafx-fxml-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-media\jars\javafx-media-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-swing\jars\javafx-swing-12.0.2-win.jar;C:\Users\Filip\.ivy2\cache\org.openjfx\javafx-web\jars\javafx-web-12.0.2-win.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 7.756059538 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.409073107 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m

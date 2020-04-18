@@ -1,15 +1,3 @@
-compile
-run 1.txt
-compile
-run 1.txt
-exit
-compile
-run 1.txt
-quit
-:quit
-:exit
-:quit
-quit
 exit
 compile
 run 1.txt
@@ -497,4 +485,16 @@ run
 reload
 run
 reload
+run
+sbt
+run
+reload
+run
+reload
+run
+reload
+run
+reload
+run
+sbt
 run

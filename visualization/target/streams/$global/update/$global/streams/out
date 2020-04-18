@@ -9,20 +9,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.13.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0msbt-chain-delegate: Checking cache for: dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-library\2.13.1\ivys\ivy.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	local: no ivy file found for org.scala-lang#scala-library;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: found md file for org.scala-lang#scala-library;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		=> https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom (2.13.1)[0m
-[0m[[0m[0mdebug[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-library;2.13.1!scala-library.pom(pom.original) (174ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-library\2.13.1\jars\scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-library;2.13.1 in public[0m
+[0m[[0m[0mdebug[0m] [0m[0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-library;2.13.1 in sbt-chain[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[2.13.1] org.scala-lang#scala-library;2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scala-lang#scala-library;2.13.1 [compile->runtime][0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scala-lang#scala-library;2.13.1 [compile->compile][0m
@@ -31,20 +19,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.13.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0msbt-chain: Checking cache for: dependency: org.scalafx#scalafx_2.13;12.0.2-R18 {compile=[default(compile)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0msbt-chain-delegate: Checking cache for: dependency: org.scalafx#scalafx_2.13;12.0.2-R18 {compile=[default(compile)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scalafx\scalafx_2.13\12.0.2-R18\ivys\ivy.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	local: no ivy file found for org.scalafx#scalafx_2.13;12.0.2-R18[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: found md file for org.scalafx#scalafx_2.13;12.0.2-R18[0m
-[0m[[0m[0mdebug[0m] [0m[0m		=> https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom (12.0.2-R18)[0m
-[0m[[0m[0mdebug[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[SUCCESSFUL ] org.scalafx#scalafx_2.13;12.0.2-R18!scalafx_2.13.pom(pom.original) (116ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scalafx\scalafx_2.13\12.0.2-R18\jars\scalafx_2.13.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	found org.scalafx#scalafx_2.13;12.0.2-R18 in public[0m
+[0m[[0m[0mdebug[0m] [0m[0msbt-chain: module revision found in cache: org.scalafx#scalafx_2.13;12.0.2-R18[0m
+[0m[[0m[0mdebug[0m] [0m[0m	found org.scalafx#scalafx_2.13;12.0.2-R18 in sbt-chain[0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scalafx#scalafx_2.13;12.0.2-R18 [compile->runtime][0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scalafx#scalafx_2.13;12.0.2-R18 [compile->compile][0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.13.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
@@ -77,20 +53,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.13.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0msbt-chain-delegate: Checking cache for: dependency: org.scala-lang#scala-reflect;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-reflect\2.13.1\ivys\ivy.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	local: no ivy file found for org.scala-lang#scala-reflect;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: found md file for org.scala-lang#scala-reflect;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		=> https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom (2.13.1)[0m
-[0m[[0m[0mdebug[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.13.1!scala-reflect.pom(pom.original) (116ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-reflect\2.13.1\jars\scala-reflect.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-reflect;2.13.1 in public[0m
+[0m[[0m[0mdebug[0m] [0m[0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-reflect;2.13.1 in sbt-chain[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[2.13.1] org.scala-lang#scala-reflect;2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies org.scalafx#scalafx_2.13;12.0.2-R18->org.scala-lang#scala-reflect;2.13.1 [compile->compile(*)][0m
@@ -1197,20 +1161,8 @@
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.13.1 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.13.1 {scala-tool=[default, optional(default)], compile=[default(compile)]}[0m
 [0m[[0m[0mdebug[0m] [0m[0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0msbt-chain-delegate: Checking cache for: dependency: org.scala-lang#scala-compiler;2.13.1 {scala-tool=[default, optional(default)]}[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-compiler\2.13.1\ivys\ivy.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	local: no ivy file found for org.scala-lang#scala-compiler;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: found md file for org.scala-lang#scala-compiler;2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m		=> https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom (2.13.1)[0m
-[0m[[0m[0mdebug[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.pom[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.13.1!scala-compiler.pom(pom.original) (115ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried C:\Users\Filip\.ivy2\local\org.scala-lang\scala-compiler\2.13.1\jars\scala-compiler.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-compiler;2.13.1 in public[0m
+[0m[[0m[0mdebug[0m] [0m[0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m	found org.scala-lang#scala-compiler;2.13.1 in sbt-chain[0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scala-lang#scala-compiler;2.13.1 [scala-tool->runtime][0m
 [0m[[0m[0mdebug[0m] [0m[0m== resolving dependencies hello-sbt#hello-sbt_2.13;1.0.6->org.scala-lang#scala-compiler;2.13.1 [scala-tool->compile][0m
 [0m[[0m[0mdebug[0m] [0m[0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.13.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
@@ -1324,50 +1276,30 @@
 [0m[[0m[0mdebug[0m] [0m[0mignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator[0m
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalafx#scalafx_2.13;12.0.2-R18!scalafx_2.13.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-base;12.0.2!javafx-base.jar[0m
-[0m[[0m[0minfo[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-fxml;12.0.2!javafx-fxml.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-controls;12.0.2!javafx-controls.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-swing;12.0.2!javafx-swing.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m		tried https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0mdownloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar ...[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.13.1!scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-web;12.0.2!javafx-web.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-media;12.0.2!javafx-media.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.13.1!scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.13.1!scala-compiler.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.12!jansi.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.1/scala-reflect-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.13.1!scala-reflect.jar (2985ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scalafx/scalafx_2.13/12.0.2-R18/scalafx_2.13-12.0.2-R18.jar[0m
-[0m[[0m[0minfo[0m] [0m[0m	[SUCCESSFUL ] org.scalafx#scalafx_2.13;12.0.2-R18!scalafx_2.13.jar (3078ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-library;2.13.1!scala-library.jar (3261ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public: downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar.sha1[0m
-[0m[[0m[0mdebug[0m] [0m[0msha1 OK for https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.1/scala-compiler-2.13.1.jar[0m
-[0m[[0m[0minfo[0m] [0m[0m	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.13.1!scala-compiler.jar (4185ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 2942ms :: artifacts dl 4194ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 provided produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 optional produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile-internal produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime-internal produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test-internal produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 plugin produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 pom produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 scala-tool produced in C:\Users\Filip\Desktop\TSP-Parallel-Genetic-Algorithm-in-Scala-master\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (2942ms resolve - 4194ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 148ms :: artifacts dl 7ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 provided produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 optional produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 plugin produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 pom produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 scala-tool produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (148ms resolve - 7ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
