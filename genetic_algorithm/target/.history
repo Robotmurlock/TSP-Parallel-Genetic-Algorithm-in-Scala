@@ -1,14 +1,3 @@
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
 compile
 run 1.txt
 compile
@@ -498,3 +487,14 @@ compile
 run Srbija.csv -as-csv
 compile
 run Srbija.csv -as-csv
+compile
+run Srbija.csv -as-csv
+compile
+run Srbija.csv -as-csv
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt
+compile
+run 1.txt

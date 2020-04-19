@@ -1,4 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/src/main/scala/main.scala:25:33: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m                    cost_matrix = Array.ofDim[Double](cols.size, cols.size)[0m
-[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/src/main/scala/reader.scala:59:19: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: Array[Array[Double]][0m
+[0m[[0m[31merror[0m] [0m[0m            for(i <- 0 to dimension-1) {[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

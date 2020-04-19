@@ -1,25 +1,31 @@
 [0m[[0m[0minfo[0m] [0m[0mPackaging /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/source_2.12-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	CSVReader$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/CSVReader$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/GA$EvolutionRunnable.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/GA$EvolutionRunnable.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/Global.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/Global.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	reader/TXTReader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/reader/TXTReader.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/Chromosome.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/Chromosome.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	reader/CSVReader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/reader/CSVReader$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm[0m
-[0m[[0m[0mdebug[0m] [0m[0m	CSVReader.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/CSVReader.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/GA$$anonfun$$nestedInanonfun$run$1$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/GA$$anonfun$$nestedInanonfun$run$1$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/Global$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/Global$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	reader/TXTReader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/reader/TXTReader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	reader[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/reader[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/GA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/genetic_algorithm/GA.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	reader/CSVReader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.12/classes/reader/CSVReader.class[0m
 [0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
