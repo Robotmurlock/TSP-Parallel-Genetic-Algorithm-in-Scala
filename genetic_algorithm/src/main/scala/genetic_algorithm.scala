@@ -44,7 +44,7 @@ package genetic_algorithm {
             for(i <- 0 to size-2) {
                 out += content(i).toString() + delimiter
             }
-            out += content(size-1).toString()
+            out += content(size-1).toString() + delimiter + content(0).toString();
             return(out)
         }
 

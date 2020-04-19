@@ -1,13 +1,16 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:44:7: not found: value --[0m
-[0m[[0m[31merror[0m] [0m[0m      --onMousePressed = (e:MouseEvent) => {[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:44:9: postfix operator onMousePressed needs to be enabled[0m
-[0m[[0m[31merror[0m] [0m[0mby making the implicit value scala.language.postfixOps visible.[0m
-[0m[[0m[31merror[0m] [0m[0m----[0m
-[0m[[0m[31merror[0m] [0m[0mThis can be achieved by adding the import clause 'import scala.language.postfixOps'[0m
-[0m[[0m[31merror[0m] [0m[0mor by setting the compiler option -language:postfixOps.[0m
-[0m[[0m[31merror[0m] [0m[0mSee the Scaladoc for value scala.language.postfixOps for a discussion[0m
-[0m[[0m[31merror[0m] [0m[0mwhy the feature needs to be explicitly enabled.[0m
-[0m[[0m[31merror[0m] [0m[0m      --onMousePressed = (e:MouseEvent) => {[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/genetic_algorithm.scala:216:23: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `run`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m            def run() {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/genetic_algorithm.scala:238:19: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `run`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m        def run() {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/main.scala:4:32: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `main`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def main(args: Array[String]){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/vect.scala:6:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def normalize(){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/vect.scala:12:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def named(nm: String){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
