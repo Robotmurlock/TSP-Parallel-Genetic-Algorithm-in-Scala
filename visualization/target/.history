@@ -40,8 +40,6 @@ run 1.txt
 compile
 run 1.txt
 compile
-run 1.txt
-compile
 wzir
 exit
 compile
@@ -497,4 +495,6 @@ run
 sbt
 run
 compile
+run
+sbt
 run

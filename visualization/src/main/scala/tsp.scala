@@ -19,6 +19,21 @@ object tsp extends JFXApp{
  
   private var Salesman = new vect(0, 0)
   
+  
+  def findCity(Cities: ArrayBuffer[vect], index: Int) : vect = {
+	  for(c <- Cities ){
+		  if(c.index == index){
+			var found = new vect(c.x, c.y)  
+			found.named(c.name)
+			found.setIndex(index)
+			return found
+		  }
+	 }
+	 return new vect(-1, -1)
+  }
+  
+  
+  
   stage = new JFXApp.PrimaryStage{
     title = "Animation"
     
@@ -71,17 +86,16 @@ object tsp extends JFXApp{
       var Visited = 0
       
       
-      val filename = "src/1.txt"
-      for (line <- Source.fromFile(filename).getLines) {
-        val coordinates = line.split(' ')
-        Points += new vect(coordinates(0).toInt, coordinates(1).toInt)
-        Points.last.named(coordinates(2))
+      val filename = "src/cities.csv"
+      for (line <- Source.fromFile(filename).getLines.drop(1)) {
+        val coordinates = line.split(',').map(_.trim)
+        Points += new vect(coordinates(1).toInt, coordinates(2).toInt)
+        Points.last.named(coordinates(0))
+        Points.last.setIndex(coordinates(3).toInt)
       }
       
-      Salesman.x = Points(0).x
-      Salesman.y = Points(0).y
       
-      
+
 
       val SalesmanSpeed = 2
       
@@ -93,8 +107,17 @@ object tsp extends JFXApp{
         visitedCities += false
       }
       
-      SalesmanMov.x = Points(Order(Visited)).x - Salesman.x
-      SalesmanMov.y = Points(Order(Visited)).y - Salesman.y
+      val startingIndex = 0
+      
+      var currentCity = findCity(Points, startingIndex)
+      
+      Salesman.x = currentCity.x
+      Salesman.y = currentCity.y
+      
+      currentCity = findCity(Points, Order(Visited))
+      
+      SalesmanMov.x = currentCity.x - Salesman.x
+      SalesmanMov.y = currentCity.y - Salesman.y
       SalesmanMov.normalize()
       
       
@@ -104,8 +127,11 @@ object tsp extends JFXApp{
         
         if(Visited == Order.size){
           Order = ArrayBuffer[Int]()
-		  Salesman.x = Points(0).x
-		  Salesman.y = Points(0).y
+          
+		  currentCity = findCity(Points, startingIndex)
+      
+		  Salesman.x = currentCity.x
+		  Salesman.y = currentCity.y
           Visited = 0
           
           if(iterLine.hasNext){
@@ -117,8 +143,10 @@ object tsp extends JFXApp{
             for(City <- travelOrder){
               Order += City.toInt
             }
-            SalesmanMov.x = Points(Order(Visited)).x - Salesman.x
-            SalesmanMov.y = Points(Order(Visited)).y - Salesman.y
+            currentCity = findCity(Points, Order(Visited))
+      
+		    SalesmanMov.x = currentCity.x - Salesman.x
+		    SalesmanMov.y = currentCity.y - Salesman.y
             SalesmanMov.normalize()
             
             for(i <- 0 to Points.size - 1){
@@ -129,25 +157,28 @@ object tsp extends JFXApp{
         }
         
         
-        
-        if(Visited < Order.size && (Salesman.x - Points(Order(Visited)).x).abs <= SalesmanSpeed && (Salesman.y - Points(Order(Visited)).y).abs <= SalesmanSpeed){
+        currentCity = findCity(Points, Order(Visited))
+        if(Visited < Order.size && (Salesman.x - currentCity.x).abs <= SalesmanSpeed && (Salesman.y - currentCity.y).abs <= SalesmanSpeed){
           visitedCities(Order(Visited)) = true
-          println("Posetio sam " + Points(Order(Visited)).name)
+          println("Posetio sam " + currentCity.name)
           Visited += 1
           if(Visited != Order.size){
-            SalesmanMov.x = Points(Order(Visited)).x - Salesman.x
-            SalesmanMov.y = Points(Order(Visited)).y - Salesman.y
+            currentCity = findCity(Points, Order(Visited))
+      
+		    SalesmanMov.x = currentCity.x - Salesman.x
+		    SalesmanMov.y = currentCity.y - Salesman.y
             SalesmanMov.normalize()
           }
         }
         
         
         for(i <- 0 to Points.size - 1){
+		  currentCity = findCity(Points, i)
           if(visitedCities(i) == true)
             gc.fill = Color.Pink
           else
             gc.fill = Color.Yellow
-          gc.fillOval(Points(i).x, Points(i).y, 20, 20)
+          gc.fillOval(currentCity.x, currentCity.y, 20, 20)
         }
         
         
