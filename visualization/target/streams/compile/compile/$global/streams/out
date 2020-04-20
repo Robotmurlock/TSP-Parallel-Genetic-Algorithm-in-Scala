@@ -1,11 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHUb\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:44:17: overloaded method constructor Scene with alternatives:[0m
-[0m[[0m[31merror[0m] [0m[0m  (parent: scalafx.scene.Parent,fill: scalafx.scene.paint.Paint)scalafx.scene.Scene <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (width: Double,height: Double)scalafx.scene.Scene[0m
-[0m[[0m[31merror[0m] [0m[0m cannot be applied to (scalafx.beans.property.ReadOnlyDoubleProperty, scalafx.beans.property.ReadOnlyDoubleProperty)[0m
-[0m[[0m[31merror[0m] [0m[0m    scene = new Scene(sceneWidth, sceneHeight){[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHUb\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:54:31: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scalafx.beans.property.ReadOnlyDoubleProperty[0m
-[0m[[0m[31merror[0m] [0m[0m required: Double[0m
-[0m[[0m[31merror[0m] [0m[0m      val canvas = new Canvas(sceneWidth,sceneHeight)[0m
-[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:93:110: ';' expected but ')' found.[0m
+[0m[[0m[31merror[0m] [0m[0m        Points += new vect((coordinates(1).toDouble/370)*sceneWidth, coordinates(1).toDouble/570)*sceneHeight)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
