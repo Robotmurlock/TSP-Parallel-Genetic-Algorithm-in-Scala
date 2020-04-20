@@ -21,63 +21,6 @@ run 1.txt
 compile
 run 1.txt
 compile
-run 1.txt
-compile
-run 1.txt
-exit
-compile
-run 1.txt
-quit
-:quit
-:exit
-:quit
-quit
-exit
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
 wzir
 exit
 compile
@@ -498,3 +441,60 @@ compile
 run 1.txt
 compile
 run 1.txt
+compile
+run Srbija.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+run Srbija1.csv -as-csv
+run Srbija2.csv -as-csv
+run Srbija1.csv -as-csv
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+run Srbija1.csv -as-csv
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv -as-csv
+compile
+run Srbija2.csv
+compile
+run Srbija2.csv
+run 1
+compile
+run 1
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run

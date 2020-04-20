@@ -1276,30 +1276,30 @@
 [0m[[0m[0mdebug[0m] [0m[0mignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator[0m
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.13.1!scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalafx#scalafx_2.13;12.0.2-R18!scalafx_2.13.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-base;12.0.2!javafx-base.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-controls;12.0.2!javafx-controls.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-fxml;12.0.2!javafx-fxml.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-swing;12.0.2!javafx-swing.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-media;12.0.2!javafx-media.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.13.1!scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-swing;12.0.2!javafx-swing.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-controls;12.0.2!javafx-controls.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-fxml;12.0.2!javafx-fxml.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-web;12.0.2!javafx-web.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.13.1!scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.13.1!scala-compiler.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.13.1!scala-reflect.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.12!jansi.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 481ms :: artifacts dl 16ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 provided produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 optional produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test-internal produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 plugin produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 pom produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 scala-tool produced in C:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\target\scala-2.13\resolution-cache\reports\hello-sbt-hello-sbt_2.13-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (481ms resolve - 16ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 216ms :: artifacts dl 12ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 provided produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 optional produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 compile-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 runtime-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 test-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 plugin produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 pom produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for hello-sbt#hello-sbt_2.13;1.0.6 scala-tool produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/target/scala-2.13/resolution-cache/reports/hello-sbt-hello-sbt_2.13-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (216ms resolve - 12ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m

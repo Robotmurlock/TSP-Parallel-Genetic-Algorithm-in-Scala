@@ -6,7 +6,7 @@ import java.io.File
 
 package reader {
     object CSVReader{
-        val delimiter = ";"
+        var delimiter = ","
 
         def read(file: String) : Array[Array[Double]] = {
             implicit val codec = Codec("UTF-8")
@@ -38,6 +38,7 @@ package reader {
                 else {
                     // skips header
                     first_line = false
+                    delimiter = "" + line(0)
                 }
             }
             return(cost_matrix)

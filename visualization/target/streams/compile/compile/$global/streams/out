@@ -1,10 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:113:17: not found: type currentCity[0m
-[0m[[0m[31merror[0m] [0m[0m      var vect: currentCity = findCity(Points, Order(Visited))[0m
-[0m[[0m[31merror[0m] [0m[0m                ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:115:23: not found: value currentCity[0m
-[0m[[0m[31merror[0m] [0m[0m      SalesmanMov.x = currentCity.x - Salesman.x[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\My Documents\GitHub\TSP-Parallel-Genetic-Algorithm-in-Scala\visualization\src\main\scala\tsp.scala:116:23: not found: value currentCity[0m
-[0m[[0m[31merror[0m] [0m[0m      SalesmanMov.y = currentCity.y - Salesman.y[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/vect.scala:7:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def normalize(){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/vect.scala:13:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def named(nm: String){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/visualization/src/main/scala/vect.scala:17:25: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `setIndex`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def setIndex(ind: Int){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

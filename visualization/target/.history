@@ -32,14 +32,6 @@ run 1.txt
 compile
 run 1.txt
 compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
-run 1.txt
-compile
 wzir
 exit
 compile
@@ -497,4 +489,12 @@ run
 compile
 run
 sbt
+run
+compile
+run cities.csv
+compile
+run
+compile
+run
+compile
 run
