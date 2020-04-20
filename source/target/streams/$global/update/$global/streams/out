@@ -1277,125 +1277,29 @@
 [0m[[0m[0mdebug[0m] [0m[0m	resolved ivy file produced in cache[0m
 [0m[[0m[0mdebug[0m] [0m[0m:: downloading artifacts ::[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-library;2.13.1!scala-library.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-base;12.0.2!javafx-base.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-controls;12.0.2!javafx-controls.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scalafx#scalafx_2.13;12.0.2-R18!scalafx_2.13.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (54ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-controls;12.0.2!javafx-controls.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-fxml;12.0.2!javafx-fxml.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-media;12.0.2!javafx-media.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-swing;12.0.2!javafx-swing.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-web;12.0.2!javafx-web.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.13.1!scala-reflect.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.13.1!scala-compiler.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mno default ivy user dir defined: set to /home/mokoyo/.ivy2[0m
-[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-base;12.0.2!javafx-base.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-graphics;12.0.2!javafx-graphics.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.12!jansi.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (40ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (53ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (67ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (47ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
-[0m[[0m[0mdebug[0m] [0m[0mno default cache defined: set to /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0mincluding url: jar:file:/home/mokoyo/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0msettings loaded (27ms)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default cache: /home/mokoyo/.ivy2/cache[0m
-[0m[[0m[0mdebug[0m] [0m[0m	default resolver: default[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-- 5 resolvers:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	shared [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m	default [chain] [local, main][0m
-[0m[[0m[0mdebug[0m] [0m[0m	public [ibiblio][0m
-[0m[[0m[0mdebug[0m] [0m[0m	main [chain] [shared, public][0m
-[0m[[0m[0mdebug[0m] [0m[0m	local [file][0m
-[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 820ms :: artifacts dl 127ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 compile produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-compile.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 runtime produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-runtime.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 test produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-test.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 provided produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-provided.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 optional produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-optional.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 compile-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-compile-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 runtime-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-runtime-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 test-internal produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-test-internal.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 plugin produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-plugin.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 pom produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-pom.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 scala-tool produced in /home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-scala-tool.xml[0m
-[0m[[0m[0mdebug[0m] [0m[0m	resolve done (820ms resolve - 127ms download)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-web;12.0.2!javafx-web.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] org.openjfx#javafx-swing;12.0.2!javafx-swing.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[NOT REQUIRED] jline#jline;2.14.6!jline.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m:: resolution report :: resolve 823ms :: artifacts dl 28ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 compile produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-compile.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 runtime produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-runtime.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 test produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-test.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 provided produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-provided.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 optional produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-optional.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 compile-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-compile-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 runtime-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-runtime-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 test-internal produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-test-internal.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 plugin produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-plugin.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 pom produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-pom.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	report for tsp#tsp_2.13;1.0.6 scala-tool produced in /home/rumeni/TSP-Parallel-Genetic-Algorithm-in-Scala/source/target/scala-2.13/resolution-cache/reports/tsp-tsp_2.13-scala-tool.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	resolve done (823ms resolve - 28ms download)[0m
 [0m[[0m[0minfo[0m] [0m[0mDone updating.[0m

@@ -4,7 +4,7 @@
 		module="source-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20200416113619"
+		publication="20200420125134"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
