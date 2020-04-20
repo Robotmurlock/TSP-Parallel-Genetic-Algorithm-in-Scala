@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/src/main/scala/main.scala:24:16: not found: value StdIn[0m
+[0m[[0m[31merror[0m] [0m[0m    var arg1 = StdIn.readLine()[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/genetic_algorithm/src/main/scala/main.scala:25:16: not found: value StdIn[0m
+[0m[[0m[31merror[0m] [0m[0m    var arg2 = StdIn.readLine()[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
