@@ -6,3 +6,6 @@ Implementation of Parallel Genetic Algorithm in Scala for solving Travelling Sal
 `sbt`<br>
 `compile`<br>
 `run`<br>
+
+# Result:
+![result](https://github.com/Robotmurlock/TSP-Parallel-Genetic-Algorithm-in-Scala/tree/master/docs/tsp_rs.gif)
