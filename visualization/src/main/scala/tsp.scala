@@ -37,11 +37,12 @@ object tsp extends JFXApp{
   stage = new JFXApp.PrimaryStage{
     title = "Animation"
     
-    val sceneWidth = 370
-    val sceneHeight = 570
+    val img = new Image("file:src/images/srbija.jpg")
+    
+    val sceneWidth = img.width.toInt
+    val sceneHeight = img.height.toInt
     scene = new Scene(sceneWidth, sceneHeight){
       
-      val img = new Image("file:src/images/srbija.jpg", sceneWidth, sceneHeight, true, true)
       
       
       val view = new ImageView(img)
@@ -89,7 +90,7 @@ object tsp extends JFXApp{
       val filename = "src/cities.csv"
       for (line <- Source.fromFile(filename).getLines.drop(1)) {
         val coordinates = line.split(',').map(_.trim)
-        Points += new vect(coordinates(1).toInt, coordinates(2).toInt)
+        Points += new vect((coordinates(1).toDouble/370)*sceneWidth, (coordinates(2).toDouble/570)*sceneHeight)
         Points.last.named(coordinates(0))
         Points.last.setIndex(coordinates(3).toInt)
       }
