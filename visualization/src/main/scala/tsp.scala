@@ -37,11 +37,12 @@ object tsp extends JFXApp{
   stage = new JFXApp.PrimaryStage{
     title = "Animation"
     
-    val sceneWidth = 370
-    val sceneHeight = 570
+    val img = new Image("file:src/images/srbija.jpg")
+    
+    val sceneWidth = img.width.toInt
+    val sceneHeight = img.height.toInt
     scene = new Scene(sceneWidth, sceneHeight){
       
-      val img = new Image("file:src/images/srbija.jpg", sceneWidth, sceneHeight, true, true)
       
       
       val view = new ImageView(img)

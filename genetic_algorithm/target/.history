@@ -22,8 +22,6 @@ compile
 run 1.txt
 compile
 run 1.txt
-compile
-run 1.txt
 exit
 compile
 run 1.txt
@@ -498,3 +496,5 @@ compile
 run 1.txt
 compile
 run 1.txt
+run
+exit
