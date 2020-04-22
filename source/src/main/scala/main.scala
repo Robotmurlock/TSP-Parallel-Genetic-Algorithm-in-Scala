@@ -83,7 +83,9 @@ object Main extends JFXApp{
                     prefix)
     ga.run()
 
+
     var Salesman = new vect(0, 0)
+    //Find a city with given index from the input file
     def findCity(Cities: ArrayBuffer[vect], index: Int) : vect = {
         for(c <- Cities ){
             if(c.index == index){
@@ -101,8 +103,13 @@ object Main extends JFXApp{
     stage = new JFXApp.PrimaryStage {
         title = "Animation"
         
+        //Loading the serbia map
         val img = new Image("file:" + prefix + image_path)
         
+        //default image dimensions
+        val imageWidth = 370
+        val imageHeight = 570
+        //setting parameters for the scene and canvas to match the image size
         val sceneWidth = img.width.toInt
         val sceneHeight = img.height.toInt
         scene = new Scene(sceneWidth, sceneHeight) {
@@ -110,32 +117,37 @@ object Main extends JFXApp{
             val view = new ImageView(img)
             
             
-            
             val  border = new BorderPane
             val canvas = new Canvas(sceneWidth,sceneHeight)
             val gc = canvas.graphicsContext2D
             border.center = canvas
             
-            
             content = List(view, border)
             
+            //finding coordinates of cities by clicking on the map
             //onMousePressed = (e:MouseEvent) => {
             //  println(e.x, e.y)
             //}
             
+            //time measurement for each generation
             var timeStart = System.nanoTime
             var duration = (System.nanoTime - timeStart)/1e9d
             
+            
+            //points/cities displayed on the map
             var Points = ArrayBuffer[vect]()
             
             val fileOrder = prefix + "result.csv"
             
+            //reading the order of the salesman tour for every generation
             val iterLine = io.Source.fromFile(fileOrder).getLines.drop(1)
+            
             
             val generationStep = ga.max_iterations/10
             
             var Order = ArrayBuffer[Int]()
             
+            //loading order of 1 generation at a time
             if(iterLine.hasNext) {
                 val cols = iterLine.next().split(",").map(_.trim)
                 
@@ -151,21 +163,23 @@ object Main extends JFXApp{
             var Visited = 0
             
             
+            //loading each city to display
             val filename = prefix + cities_path
             for (line <- Source.fromFile(filename).getLines.drop(1)) {
                 val coordinates = line.split(',').map(_.trim)
-                Points += new vect((coordinates(1).toDouble/370)*sceneWidth, (coordinates(2).toDouble/570)*sceneHeight)
+                Points += new vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
                 Points.last.named(coordinates(0))
                 Points.last.setIndex(coordinates(3).toInt)
             }
             
             
 
-
             val SalesmanSpeed = 5
             
             val SalesmanMov = new vect(0, 0)
 
+
+			//indicator for the cities help determianting the color on the map
             var visitedCities = ArrayBuffer[Boolean]()
             
             for(i <- 0 to Points.size - 1) {
@@ -173,17 +187,15 @@ object Main extends JFXApp{
             }
             
             
-            var startingIndex = 0
             
-            var currentCity = findCity(Points, startingIndex)
+            var currentCity = findCity(Points, Order(0))
+            //setting salesman starting position in generation 0
+            Salesman.x = currentCity.x
+            Salesman.y = currentCity.y
             
-            Salesman.x = Points(Order(0)).x
-            Salesman.y = Points(Order(0)).y
-            
-            println(Points(Order(0)).x)
             
             currentCity = findCity(Points, Order(Visited))
-            
+            //setting salesman movement vector based on the order 
             SalesmanMov.x = currentCity.x - Salesman.x
             SalesmanMov.y = currentCity.y - Salesman.y
             SalesmanMov.normalize()
@@ -192,23 +204,22 @@ object Main extends JFXApp{
             val timer = AnimationTimer { time =>
                 gc.drawImage(img, 0, 0)
                 
-                
+                //transition to the display of next generation
                 if(Visited == Order.size){
                     Order = ArrayBuffer[Int]()
                 
-                    currentCity = findCity(Points, startingIndex)
-            
                     
                     Visited = 0
-                
+					//showing the time of the previous generation
 					var duration = (System.nanoTime - timeStart)/1e9d
 					println("Potrebno vreme za obilazak u sekundama: " + duration)
 					
-                
+					//leaveing room for the preview of the finished generation
 					Thread.sleep(1000)
-					
+					//starting timer for another generation
 					timeStart = System.nanoTime
 					
+					//reading the next generation
                     if(iterLine.hasNext) {
                         val cols = iterLine.next().split(",").map(_.trim)
                         println("---------------------------")
@@ -218,24 +229,28 @@ object Main extends JFXApp{
                         for(City <- travelOrder){
                             Order += City.toInt
                         }
-                        currentCity = findCity(Points, Order(Visited))
+                        //reseting location  of the salesman
+                        currentCity = findCity(Points, Order(0))
+                        Salesman.x = currentCity.x
+						Salesman.y = currentCity.y
                         
-                        Salesman.x = Points(Order(0)).x
-						Salesman.y = Points(Order(0)).y
-                
+                        currentCity = findCity(Points, Order(Visited))
+
                         SalesmanMov.x = currentCity.x - Salesman.x
                         SalesmanMov.y = currentCity.y - Salesman.y
                         SalesmanMov.normalize()
                         
+                        
+                        //reseting visited used to determine the color of the city
                         for(i <- 0 to Points.size - 1){
                             visitedCities(i) = false
                         }
                     }else
 						System.exit(0)
-				    iterLine.drop(generationStep)
+				    iterLine.drop(generationStep) //skipping generations
                 }
                 
-                
+                //check if the salesman has come to the city and advancing to the next city if he had visited the previous
                 currentCity = findCity(Points, Order(Visited))
                 if(Visited < Order.size && (Salesman.x - currentCity.x).abs <= SalesmanSpeed && (Salesman.y - currentCity.y).abs <= SalesmanSpeed) {
                     visitedCities(Order(Visited)) = true
@@ -250,7 +265,7 @@ object Main extends JFXApp{
                     }
                 }
                 
-                
+                //coloring the cities basted on the cities salesman has visited
                 for(i <- 0 to Points.size - 1) {
                     currentCity = findCity(Points, i)
                     if(visitedCities(i) == true)
@@ -260,7 +275,7 @@ object Main extends JFXApp{
                     gc.fillOval(currentCity.x, currentCity.y, 20, 20)
                 }
                 
-                
+                //movement of the salesman
                 gc.fill = Color.Cyan
                 Salesman.x = Salesman.x + SalesmanMov.x*SalesmanSpeed
                 Salesman.y = Salesman.y + SalesmanMov.y*SalesmanSpeed
