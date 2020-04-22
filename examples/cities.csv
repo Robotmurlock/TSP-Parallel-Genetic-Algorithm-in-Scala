@@ -1,5 +1,5 @@
 name, x, y, index
-Beograd, 131, 171, 0
+Beograd, 131, 171, 14
 Cacak, 202, 274, 1
 Jagodina, 120, 284, 2 
 Kragujevac, 171, 270, 3
@@ -13,7 +13,7 @@ Pirot, 323, 377, 10
 Pozarevac, 193, 195, 11 
 Pristina, 191, 442, 12
 Sombor, 15, 47, 13
-Subotica, 60, 4, 14
+Subotica, 60, 4, 0
 Sabac, 58, 177, 15
 Uzice, 73, 289, 16
 Valjevo, 78, 238, 17

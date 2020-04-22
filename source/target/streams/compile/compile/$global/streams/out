@@ -1,16 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:212:23: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `run`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m            def run() {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:234:19: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `run`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/genetic_algorithm.scala:249:19: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `run`'s return type[0m
 [0m[[0m[33mwarn[0m] [0m[0m        def run() {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/vect.scala:7:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def normalize(){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/vect.scala:13:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def named(nm: String){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/TSP-Parallel-Genetic-Algorithm-in-Scala/source/src/main/scala/vect.scala:17:25: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `setIndex`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def setIndex(ind: Int){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

@@ -65,6 +65,18 @@ package genetic_algorithm {
             return(cost)
         }
 
+        def normalize() = {
+            if(content(0) != 0) {
+                var zero_index: Int = 0
+                for(i <- 0 until size) {
+                    if(content(i) == 0) {
+                        zero_index = i
+                    }
+                }
+                content = content.drop(zero_index) ++ content.take(zero_index)
+            }
+        }
+
         override def toString() : String = { 
             return("path: " + path() + ", fitness: " + fitness().toString()); 
         } 
@@ -209,7 +221,7 @@ package genetic_algorithm {
         }
 
         class EvolutionRunnable(population: Array[Chromosome], new_population: Array[Chromosome]) extends Runnable {
-            def run() {
+            def run() : Unit = {
 
                 var index: Int = atomic_index.getAndIncrement()
 
@@ -222,6 +234,9 @@ package genetic_algorithm {
                     // Mutation 
                     c1 = mutate(c1)
                     c2 = mutate(c2)
+                    // Normalizing values
+                    c1.normalize()
+                    c2.normalize()
                     // adding mutated chromosomes to new population
                     new_population(2*index) = c1
                     new_population(2*index+1) = c2
@@ -231,7 +246,7 @@ package genetic_algorithm {
             }
         }
 
-        def run() {
+        def run() : Unit = {
             var population: Array[Chromosome] = init_population(chromosome_size)
             var data: Array[Chromosome] = Array.ofDim[Chromosome](max_iterations)
 
