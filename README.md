@@ -27,4 +27,4 @@ By supplying your own image and cities location alongside TSP problem (previous 
 by changing `cities` and `image` parameter in `parameter.csv` file.
 
 # Result:
-![result](https://raw.githubusercontent.com/Robotmurlock/TSP-Parallel-Genetic-Algorithm-in-Scala/master/docs/tsp_rs_v2.gif)
+![result](https://raw.githubusercontent.com/Robotmurlock/TSP-Parallel-Genetic-Algorithm-in-Scala/master/docs/tsp.mp4)
