@@ -27,4 +27,4 @@ By supplying your own image and cities location alongside TSP problem (previous 
 by changing `cities` and `image` parameter in `parameter.csv` file.
 
 # Result:
-[![result](https://www.youtube.com/watch?v=0a0ixarMf2o](https://www.youtube.com/watch?v=0a0ixarMf2o)
+[![result](https://github.com/matf-pp/2020_ParGenAlg/blob/master/docs/tsp_thumbnail.png](https://www.youtube.com/watch?v=0a0ixarMf2o)
