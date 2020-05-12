@@ -26,5 +26,5 @@ By making your own TSP cost matrix as `.csv` file or as `.txt` file and changing
 By supplying your own image and cities location alongside TSP problem (previous section) you can make your own animation
 by changing `cities` and `image` parameter in `parameter.csv` file.
 
-# Result:
+# Result (click on the image to open video):
 [![result](https://github.com/matf-pp/2020_ParGenAlg/blob/master/docs/tsp_thumbnail.png)](https://www.youtube.com/watch?v=0a0ixarMf2o)
