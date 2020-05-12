@@ -1,10 +1,10 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Filip\My Documents\github\2020_ParGenAlg\source\src\main\scala\vect.scala:7:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:7:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def normalize(){[0m
 [0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Filip\My Documents\github\2020_ParGenAlg\source\src\main\scala\vect.scala:13:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:13:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def named(nm: String){[0m
 [0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\Filip\My Documents\github\2020_ParGenAlg\source\src\main\scala\vect.scala:17:25: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `setIndex`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:17:25: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `setIndex`'s return type[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def setIndex(ind: Int){[0m
 [0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
