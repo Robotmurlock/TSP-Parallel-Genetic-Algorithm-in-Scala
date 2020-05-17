@@ -27,4 +27,5 @@ By supplying your own image and cities location alongside TSP problem (previous 
 by changing `cities` and `image` parameter in `parameter.csv` file.
 
 # Result (click on the image to open video):
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/513daeb51986452daa196667f066210b)](https://app.codacy.com/gh/matf-pp/2020_ParGenAlg?utm_source=github.com&utm_medium=referral&utm_content=matf-pp/2020_ParGenAlg&utm_campaign=Badge_Grade_Dashboard)
 [![result](https://github.com/matf-pp/2020_ParGenAlg/blob/master/docs/tsp_thumbnail.png)](https://www.youtube.com/watch?v=0a0ixarMf2o)
