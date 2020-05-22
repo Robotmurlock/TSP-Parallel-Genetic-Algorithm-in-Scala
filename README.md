@@ -1,16 +1,16 @@
 # TSP-Parallel-Genetic-Algorithm-in-Scala
 Implementation of Parallel Genetic Algorithm in Scala for solving Travelling Salesman Problem with optional animation using scalafx.
 
-# Requirement:
+# Requirement
 `sbt`, `https://www.scala-sbt.org/`
 
-# To run genetic algorithm with animation:
+# To run genetic algorithm with animation
 `position in sources`<br>
 `sbt`<br>
 `compile`<br>
 `run`<br>
 
-# Parameters:
+# Parameters
 Parameters for genetic algorithm can be changed in `parameter.csv` file:<br>
 `population_size`<br> 
 `max_iterations`<br>
@@ -19,13 +19,13 @@ Parameters for genetic algorithm can be changed in `parameter.csv` file:<br>
 `mutation_rate`<br>
 `num_of_threads`<br>
 
-# Custom TSP problem:
+# Custom TSP problem
 By making your own TSP cost matrix as `.csv` file or as `.txt` file and changing `cost_matrix` parameter in `parameter.csv` file you can run genetic algorithm to solve your TSP problem.
 
-# Making your own animation:
+# Making your own animation
 By supplying your own image and cities location alongside TSP problem (previous section) you can make your own animation
 by changing `cities` and `image` parameter in `parameter.csv` file.
 
-# Result (click on the image to open video):
+# Result (click on the image to open video)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/513daeb51986452daa196667f066210b)](https://app.codacy.com/gh/matf-pp/2020_ParGenAlg?utm_source=github.com&utm_medium=referral&utm_content=matf-pp/2020_ParGenAlg&utm_campaign=Badge_Grade_Dashboard)
 [![result](https://github.com/matf-pp/2020_ParGenAlg/blob/master/docs/tsp_thumbnail.png)](https://www.youtube.com/watch?v=0a0ixarMf2o)
