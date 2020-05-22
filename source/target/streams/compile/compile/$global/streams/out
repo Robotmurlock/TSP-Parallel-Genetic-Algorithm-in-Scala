@@ -1,5 +1,11 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:192:32: '(' expected but identifier found.[0m
-[0m[[0m[31merror[0m] [0m[0m                (acc, x) => if x.fitness() < acc.fitness x else acc[0m
-[0m[[0m[31merror[0m] [0m[0m                               ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:193:13: illegal start of simple expression[0m
-[0m[[0m[31merror[0m] [0m[0m            }[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:206:46: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: genetic_algorithm.Chromosome[0m
+[0m[[0m[31merror[0m] [0m[0m                    newPopulation(2*index) = c1_mutated[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:207:48: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: genetic_algorithm.Chromosome[0m
+[0m[[0m[31merror[0m] [0m[0m                    newPopulation(2*index+1) = c2_mutated[0m
+[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

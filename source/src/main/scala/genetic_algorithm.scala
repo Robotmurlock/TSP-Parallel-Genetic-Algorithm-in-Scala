@@ -109,16 +109,10 @@ package genetic_algorithm {
                 val r: Int = Global.random.nextInt(populationSize-1)
                 randomArray(i) = population(r)
             }
-
-            var min: Double = randomArray(0).fitness()
-            var index: Int = 0 
-            for(i <- 1 until tournamentSize){
-                if(randomArray(i).fitness() < min){
-                    min = randomArray(i).fitness
-                    index = i
-                }
-            }
-            return(population(index))
+            val bestChromosomeIndex = ((randomArray zip (1 until tournamentSize)).fold((randomArray(0), 0)) {
+                (acc, x) => if (x._1.fitness() < acc._1.fitness()) x else acc
+            })._2
+            population(bestChromosomeIndex)
         }
 
         def crossoverNextIndex(index: Int, size: Int) : Int = {
@@ -143,7 +137,7 @@ package genetic_algorithm {
             var c1Index = secondRandom
             var c2Index = secondRandom
 
-            for(i <- secondRandom until p1.size) {
+            for(i <- (secondRandom until p1.size) ++ (0 until secondRandom)) {
                 if(!(c1Used contains p1.content(i))) {
                     c1.content(c1Index) = p1.content(i)
                     c1Index = crossoverNextIndex(c1Index, p1.size)
@@ -153,18 +147,6 @@ package genetic_algorithm {
                     c2Index = crossoverNextIndex(c2Index, p1.size)
                 }
             }
-
-            for(i <- 0 until secondRandom) {
-                if(!(c1Used contains p1.content(i))) {
-                    c1.content(c1Index) = p1.content(i)
-                    c1Index = crossoverNextIndex(c1Index, p1.size)
-                }
-                if(!(c2Used contains p2.content(i))) {
-                    c2.content(c2Index) = p2.content(i)
-                    c2Index = crossoverNextIndex(c2Index, p1.size)
-                }
-            }
-
             return(c1, c2)
         }
 
@@ -207,16 +189,16 @@ package genetic_algorithm {
                     val p1 = select(population)
                     val p2 = select(population)
                     // Crossover 
-                    var (c1, c2) = crossover(p1, p2)
-                    // Mutation 
-                    c1 = mutate(c1)
-                    c2 = mutate(c2)
-                    // Normalizing values
-                    c1.normalize()
-                    c2.normalize()
+                    val (c1, c2) = crossover(p1, p2)
+                    // Mutation (with normalization)
+                    val c1_mutated = mutate(c1)
+                    val c2_mutated = mutate(c2)
+                    // normalization
+                    c1_mutated.normalize()
+                    c2_mutated.normalize()
                     // adding mutated chromosomes to new population
-                    newPopulation(2*index) = c1
-                    newPopulation(2*index+1) = c2
+                    newPopulation(2*index) = c1_mutated
+                    newPopulation(2*index+1) = c2_mutated
                     // updating global index
                     index = atomicIndex.getAndIncrement()
                 }
