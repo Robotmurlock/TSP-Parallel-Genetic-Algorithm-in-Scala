@@ -5,7 +5,7 @@ class vect(xc: Double, yc: Double){
   var index: Int = -1
   
   def normalize(): Unit = {
-    var norm: Double = Math.sqrt(x*x + y*y)
+    val norm: Double = Math.sqrt(x*x + y*y)
     x = x/norm
     y = y/norm
   }

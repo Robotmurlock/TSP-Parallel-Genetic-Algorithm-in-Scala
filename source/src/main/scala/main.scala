@@ -22,7 +22,7 @@ import scalafx.event.ActionEvent
 
 object Main extends JFXApp{
     val parameterSource = io.Source.fromFile("../parameter.csv")
-    var parameterSourceDelimiter = ","
+    val parameterSourceDelimiter = ","
     var firstLine: Boolean = true;
     var header: Array[String] = null
 
@@ -86,8 +86,8 @@ object Main extends JFXApp{
 
     var salesman = new vect(0, 0)
     //Find a city with given index from the input file
-    def findCity(Cities: ArrayBuffer[vect], index: Int) : vect = {
-        for(c <- Cities ){
+    def findCity(cities: ArrayBuffer[vect], index: Int) : vect = {
+        for(c <- cities ){
             if(c.index == index){
             var found = new vect(c.x, c.y)  
             found.named(c.name)
@@ -135,7 +135,7 @@ object Main extends JFXApp{
             
             
             //points/cities displayed on the map
-            var Points = ArrayBuffer[vect]()
+            var points = ArrayBuffer[vect]()
             
             val fileorder = prefix + "result.csv"
             
@@ -167,9 +167,9 @@ object Main extends JFXApp{
             val filename = prefix + citiesPath
             for (line <- Source.fromFile(filename).getLines.drop(1)) {
                 val coordinates = line.split(',').map(_.trim)
-                Points += new vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
-                Points.last.named(coordinates(0))
-                Points.last.setIndex(coordinates(3).toInt)
+                points += new vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
+                points.last.named(coordinates(0))
+                points.last.setIndex(coordinates(3).toInt)
             }
             
             
@@ -182,19 +182,19 @@ object Main extends JFXApp{
 			//indicator for the cities help determianting the color on the map
             var visitedCities = ArrayBuffer[Boolean]()
             
-            for(i <- 0 to Points.size - 1) {
+            for(i <- 0 to points.size - 1) {
                 visitedCities += false
             }
             
             
             
-            var currentCity = findCity(Points, order(0))
+            var currentCity = findCity(points, order(0))
             //setting salesman starting position in generation 0
             salesman.x = currentCity.x
             salesman.y = currentCity.y
             
             
-            currentCity = findCity(Points, order(visited))
+            currentCity = findCity(points, order(visited))
             //setting salesman movement vector based on the order 
             salesmanMov.x = currentCity.x - salesman.x
             salesmanMov.y = currentCity.y - salesman.y
@@ -230,11 +230,11 @@ object Main extends JFXApp{
                             order += City.toInt
                         }
                         //reseting location  of the salesman
-                        currentCity = findCity(Points, order(0))
+                        currentCity = findCity(points, order(0))
                         salesman.x = currentCity.x
 						salesman.y = currentCity.y
                         
-                        currentCity = findCity(Points, order(visited))
+                        currentCity = findCity(points, order(visited))
 
                         salesmanMov.x = currentCity.x - salesman.x
                         salesmanMov.y = currentCity.y - salesman.y
@@ -242,7 +242,7 @@ object Main extends JFXApp{
                         
                         
                         //reseting visited used to determine the color of the city
-                        for(i <- 0 to Points.size - 1){
+                        for(i <- 0 to points.size - 1){
                             visitedCities(i) = false
                         }
                     }else
@@ -251,13 +251,13 @@ object Main extends JFXApp{
                 }
                 
                 //check if the salesman has come to the city and advancing to the next city if he had visited the previous
-                currentCity = findCity(Points, order(visited))
+                currentCity = findCity(points, order(visited))
                 if(visited < order.size && (salesman.x - currentCity.x).abs <= salesmanSpeed && (salesman.y - currentCity.y).abs <= salesmanSpeed) {
                     visitedCities(order(visited)) = true
                     println("Posetio sam " + currentCity.name)
                     visited += 1
                     if(visited != order.size) {
-                        currentCity = findCity(Points, order(visited))
+                        currentCity = findCity(points, order(visited))
                 
                         salesmanMov.x = currentCity.x - salesman.x
                         salesmanMov.y = currentCity.y - salesman.y
@@ -266,8 +266,8 @@ object Main extends JFXApp{
                 }
                 
                 //coloring the cities basted on the cities salesman has visited
-                for(i <- 0 to Points.size - 1) {
-                    currentCity = findCity(Points, i)
+                for(i <- 0 to points.size - 1) {
+                    currentCity = findCity(points, i)
                     if(visitedCities(i) == true)
                         gc.fill = Color.Black
                     else

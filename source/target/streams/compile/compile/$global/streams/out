@@ -1,10 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:7:18: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `normalize`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def normalize(){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:13:24: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `named`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def named(nm: String){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/vect.scala:17:25: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `setIndex`'s return type[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def setIndex(ind: Int){[0m
-[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/reader.scala:23:75: recursive variable cols needs type[0m
+[0m[[0m[31merror[0m] [0m[0m                    var cols = line.split(delimiter).map(_.trim).slice(1, cols.size)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -19,8 +19,8 @@ package reader {
             var firstLine: Boolean = true
             for (line <- bufferedSource.getLines()) {
                 if(!firstLine) {
-                    var cols = line.split(delimiter).map(_.trim)
                     // skips first columns
+                    var cols = line.split(delimiter).map(_.trim)
                     cols = cols.slice(1, cols.size)
 
                     // memory optimization
@@ -49,7 +49,7 @@ package reader {
         def read(file: String) : Array[Array[Double]] = {
             val sc = new Scanner(new File(file))
             val dimension = sc.nextInt()
-            var costMatrix = Array.ofDim[Double](dimension, dimension)
+            val costMatrix = Array.ofDim[Double](dimension, dimension)
 
             for(i <- 0 to dimension-1) {
                 for(j <- 0 to dimension-1) {

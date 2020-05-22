@@ -22,20 +22,20 @@ package genetic_algorithm {
 
         // Knuth shuffles:
         for(i <- 1 to size-2) {
-            var j = i + Global.random.nextInt(size-i)
-            var tmp: Int = content(i)
+            val j = i + Global.random.nextInt(size-i)
+            val tmp: Int = content(i)
             content(i) = content(j)
             content(j) = tmp
         }
 
         def copy() : Chromosome = {
-            var chrom = new Chromosome(size, costMatrix)
+            val chrom = new Chromosome(size, costMatrix)
             for(i <- 0 until size) {
                 chrom.content(i) = content(i)
             }
             // fitness must be calculated again
             chrom.fit = -1
-            return chrom
+            return(chrom)
         }
         
         // returns path as string
@@ -65,15 +65,14 @@ package genetic_algorithm {
             return(cost)
         }
 
-        def normalize() = {
+        def normalize(): Unit = {
             if(content(0) != 0) {
-                var zero_index: Int = 0
                 for(i <- 0 until size) {
                     if(content(i) == 0) {
-                        zero_index = i
+                        content = content.drop(i) ++ content.take(i)
+                        return()
                     }
                 }
-                content = content.drop(zero_index) ++ content.take(zero_index)
             }
         }
 
@@ -113,17 +112,17 @@ package genetic_algorithm {
         }
 
         def select(population: Array[Chromosome]) : Chromosome = {
-            var random_array = new Array[Chromosome](tournamentSize)
+            val randomArray = new Array[Chromosome](tournamentSize)
             for(i <- 0 until tournamentSize){
-                var r: Int = Global.random.nextInt(populationSize-1)
-                random_array(i) = population(r)
+                val r: Int = Global.random.nextInt(populationSize-1)
+                randomArray(i) = population(r)
             }
 
-            var min: Double = random_array(0).fitness()
+            var min: Double = randomArray(0).fitness()
             var index: Int = 0 
             for(i <- 1 until tournamentSize){
-                if(random_array(i).fitness() < min){
-                    min = random_array(i).fitness
+                if(randomArray(i).fitness() < min){
+                    min = randomArray(i).fitness
                     index = i
                 }
             }
@@ -131,22 +130,21 @@ package genetic_algorithm {
         }
 
         def crossoverNextIndex(index: Int, size: Int) : Int = {
-            var next = index + 1
-            if(next == size) {
-                next = 0
+            if(index + 1 == size) {
+                return(0)
             }
-            return(next)
+            return(index+1)
         }
 
         def crossover(p1: Chromosome, p2: Chromosome) : (Chromosome, Chromosome) = {
-            var c1 = p1.copy()
-            var c2 = p2.copy()
+            val c1 = p1.copy()
+            val c2 = p2.copy()
 
             var firstRandom: Int = Global.random.nextInt(p1.size)
             var secondRandom: Int = Global.random.nextInt(p1.size)
 
             if(secondRandom < firstRandom) {
-                var tmp = firstRandom
+                val tmp = firstRandom
                 firstRandom = secondRandom
                 secondRandom = tmp
             }
@@ -156,31 +154,31 @@ package genetic_algorithm {
                 c2.content(i) = p1.content(i)
             }
 
-            var c2_used = p1.content.slice(firstRandom, secondRandom).toSet
-            var c1_used = p2.content.slice(firstRandom, secondRandom).toSet
+            var c2Used = p1.content.slice(firstRandom, secondRandom).toSet
+            var c1Used = p2.content.slice(firstRandom, secondRandom).toSet
 
-            var c1_index = secondRandom
-            var c2_index = secondRandom
+            var c1Index = secondRandom
+            var c2Index = secondRandom
 
             for(i <- secondRandom until p1.size) {
-                if(!(c1_used contains p1.content(i))) {
-                    c1.content(c1_index) = p1.content(i)
-                    c1_index = crossoverNextIndex(c1_index, p1.size)
+                if(!(c1Used contains p1.content(i))) {
+                    c1.content(c1Index) = p1.content(i)
+                    c1Index = crossoverNextIndex(c1Index, p1.size)
                 }
-                if(!(c2_used contains p2.content(i))) {
-                    c2.content(c2_index) = p2.content(i)
-                    c2_index = crossoverNextIndex(c2_index, p1.size)
+                if(!(c2Used contains p2.content(i))) {
+                    c2.content(c2Index) = p2.content(i)
+                    c2Index = crossoverNextIndex(c2Index, p1.size)
                 }
             }
 
             for(i <- 0 until secondRandom) {
-                if(!(c1_used contains p1.content(i))) {
-                    c1.content(c1_index) = p1.content(i)
-                    c1_index = crossoverNextIndex(c1_index, p1.size)
+                if(!(c1Used contains p1.content(i))) {
+                    c1.content(c1Index) = p1.content(i)
+                    c1Index = crossoverNextIndex(c1Index, p1.size)
                 }
-                if(!(c2_used contains p2.content(i))) {
-                    c2.content(c2_index) = p2.content(i)
-                    c2_index = crossoverNextIndex(c2_index, p1.size)
+                if(!(c2Used contains p2.content(i))) {
+                    c2.content(c2Index) = p2.content(i)
+                    c2Index = crossoverNextIndex(c2Index, p1.size)
                 }
             }
 
@@ -188,12 +186,12 @@ package genetic_algorithm {
         }
 
         def mutate(c: Chromosome) : Chromosome = {
-            var mutate_random: Float = Global.random.nextFloat();
-            var mutated = c.copy()
-            if(mutate_random < mutationRate) {
-                var firstRandom: Int = 1 + Global.random.nextInt(mutated.size-1)
-                var secondRandom: Int = 1 + Global.random.nextInt(mutated.size-1)
-                var tmp = mutated.content(firstRandom)
+            val mutateRandom: Float = Global.random.nextFloat();
+            val mutated = c.copy()
+            if(mutateRandom < mutationRate) {
+                val firstRandom: Int = 1 + Global.random.nextInt(mutated.size-1)
+                val secondRandom: Int = 1 + Global.random.nextInt(mutated.size-1)
+                val tmp = mutated.content(firstRandom)
                 mutated.content(firstRandom) = mutated.content(secondRandom)
                 mutated.content(secondRandom) = tmp
             }
@@ -248,7 +246,7 @@ package genetic_algorithm {
 
         def run() : Unit = {
             var population: Array[Chromosome] = initPopulation(chromosomeSize)
-            var data: Array[Chromosome] = Array.ofDim[Chromosome](maxIterations)
+            val data: Array[Chromosome] = Array.ofDim[Chromosome](maxIterations)
 
             for(i <- 0 until maxIterations) {
                 var newPopulation = Array.ofDim[Chromosome](populationSize)
@@ -259,7 +257,7 @@ package genetic_algorithm {
                 (0 until elitesCnt).foreach(j => newPopulation(j) = population(j))
 
                 // Creating new generation using threads
-                var threads: Array[Thread] = 
+                val threads: Array[Thread] = 
                     (for(j <- 0 until numOfThreads) 
                         yield (new Thread(new EvolutionRunnable(population, newPopulation)))
                     ).toArray
@@ -270,8 +268,7 @@ package genetic_algorithm {
                 population = newPopulation
 
                 // Algorithm status 
-                var bc = bestChromosome(population)
-                data(i) = bc.copy()
+                data(i) = bestChromosome(population).copy()
             }
 
             resultsToCsv(data)
