@@ -148,7 +148,7 @@ package genetic_algorithm {
                                           c2.content(c2Index) = p2.content(index)
                                           crossoverNextIndex(c2Index, p1.size)
                                       }
-                    (c1Index, c2Index)
+                    (c1IndexNext, c2IndexNext)
                 }
             }
 
@@ -233,7 +233,7 @@ package genetic_algorithm {
                 threads.foreach(t => t.join())
 
                 // Replacement
-                (0 until populationSize).foreach(index => population(i) = newPopulation(i))
+                (0 until populationSize).foreach(index => population(index) = newPopulation(index))
 
                 // Algorithm status 
                 data(i) = bestChromosome(population).copy()

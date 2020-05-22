@@ -14,7 +14,7 @@ package reader {
             val header :: lines = bufferedSource.getLines().toList
             val delimiter = "" + header(0)
             val headerColumns = header.split(delimiter).map(_.trim)
-            val costMatrix: Array[Array[Double]] = Array.ofDim[Double](headerColumns.size, headerColumns.size)
+            val costMatrix: Array[Array[Double]] = Array.ofDim[Double](headerColumns.size - 1, headerColumns.size - 1)
 
             for ((line, rowIndex) <- lines zip (0 until lines.size)) {
                 val name :: columns = line.split(delimiter).map(_.trim).toList

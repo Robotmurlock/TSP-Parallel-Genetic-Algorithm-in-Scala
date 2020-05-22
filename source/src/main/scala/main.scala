@@ -71,12 +71,12 @@ object Main extends JFXApp{
     ga.run()
 
 
-    var salesman = new Vect(0, 0)
+    val salesman = new Vect(0, 0)
     //Find a city with given index from the input file
     def findCity(cities: ArrayBuffer[Vect], index: Int) : Vect = {
         for(c <- cities ){
             if(c.index == index){
-            var found = new Vect(c.x, c.y)  
+            val found = new Vect(c.x, c.y)  
             found.named(c.name)
             found.setIndex(index)
             return found
@@ -120,7 +120,7 @@ object Main extends JFXApp{
             var timeStart = System.nanoTime            
             
             //points/cities displayed on the map
-            var points = ArrayBuffer[Vect]()
+            val points = ArrayBuffer[Vect]()
             
             val fileorder = prefix + "result.csv"
             
@@ -160,9 +160,10 @@ object Main extends JFXApp{
             
 
             val salesmanSpeed = 5
+            var lastTime = 0L
+            
             
             val salesmanMov = new Vect(0, 0)
-
 
 			//indicator for the cities help determianting the color on the map
             var visitedCities = ArrayBuffer[Boolean]()
@@ -175,19 +176,18 @@ object Main extends JFXApp{
             
             var currentCity = findCity(points, order(0))
             //setting salesman starting position in generation 0
-            salesman = new Vect(currentCity.x, currentCity.y)
+            salesman.setCoordinates(currentCity.x, currentCity.y)
             
             
             currentCity = findCity(points, order(visited))
             //setting salesman movement Vector based on the order 
-            salesmanMov.x = currentCity.x - salesman.x
-            salesmanMov.y = currentCity.y - salesman.y
+            salesmanMov.setCoordinates(currentCity.x - salesman.x, currentCity.y - salesman.y) 
             salesmanMov.normalize()
+            
             
             
             val timer = AnimationTimer { time =>
                 gc.drawImage(img, 0, 0)
-                
                 //transition to the display of next generation
                 if(visited == order.size){
                     order = ArrayBuffer[Int]()
@@ -199,7 +199,7 @@ object Main extends JFXApp{
 					println("Potrebno vreme za obilazak u sekundama: " + duration)
 					
 					//leaveing room for the preview of the finished generation
-					Thread.sleep(1000)
+					//Thread.sleep(1000)
 					//starting timer for another generation
 					timeStart = System.nanoTime
 					
@@ -223,7 +223,6 @@ object Main extends JFXApp{
                         salesmanMov.x = currentCity.x - salesman.x
                         salesmanMov.y = currentCity.y - salesman.y
                         salesmanMov.normalize()
-                        
                         
                         //reseting visited used to determine the color of the city
                         for(i <- 0 to points.size - 1){
@@ -261,11 +260,17 @@ object Main extends JFXApp{
                 
                 //movement of the salesman
                 gc.fill = Color.Cyan
-                salesman.x = salesman.x + salesmanMov.x*salesmanSpeed
-                salesman.y = salesman.y + salesmanMov.y*salesmanSpeed
-                gc.fillRect(salesman.x, salesman.y, 10, 10)
+                if(lastTime != 0){
+					val interval = (time - lastTime) / 1e9
+					salesman.x = salesman.x + salesmanMov.x*salesmanSpeed*interval*50
+					salesman.y = salesman.y + salesmanMov.y*salesmanSpeed*interval*50
+				}
+				
+				lastTime = time
+				gc.fillRect(salesman.x, salesman.y, 10, 10)
             }
             timer.start()
+            canvas.requestFocus()
         }
     }
 }

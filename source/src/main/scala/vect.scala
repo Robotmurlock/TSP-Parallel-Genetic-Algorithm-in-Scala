@@ -6,6 +6,11 @@ class Vect(var x: Double, var y: Double, var name: String = "", var index: Int =
     y = y/norm
   }
   
+  def setCoordinates(new_x: Double, new_y: Double) : Unit = {
+	  x = new_x
+	  y = new_y
+  }
+  
   def named(nm: String): Unit = {
     name = nm
   }
