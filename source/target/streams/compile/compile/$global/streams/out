@@ -1,4 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/reader.scala:23:75: recursive variable cols needs type[0m
-[0m[[0m[31merror[0m] [0m[0m                    var cols = line.split(delimiter).map(_.trim).slice(1, cols.size)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:192:32: '(' expected but identifier found.[0m
+[0m[[0m[31merror[0m] [0m[0m                (acc, x) => if x.fitness() < acc.fitness x else acc[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:193:13: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m            }[0m

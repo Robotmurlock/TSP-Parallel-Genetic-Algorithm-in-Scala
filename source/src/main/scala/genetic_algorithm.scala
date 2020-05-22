@@ -30,11 +30,7 @@ package genetic_algorithm {
 
         def copy() : Chromosome = {
             val chrom = new Chromosome(size, costMatrix)
-            for(i <- 0 until size) {
-                chrom.content(i) = content(i)
-            }
-            // fitness must be calculated again
-            chrom.fit = -1
+            chrom.content = content.clone()
             return(chrom)
         }
         
@@ -50,22 +46,18 @@ package genetic_algorithm {
 
         // calculates fitness using cost matrix
         def fitness() : Double = {
-            var cost: Double = 0
             // If fitness was already calculated then there is no need to calculate again
-            if(this.fit != -1) {
-                cost = this.fit
-            }
-            else {
+            if(this.fit == -1) {
+                this.fit = 0
                 for(i <- 0 to size-2) {
-                    cost += costMatrix(content(i))(content(i+1))
+                    this.fit += costMatrix(content(i))(content(i+1))
                 }
-                cost += costMatrix(content(size-1))(content(0))
-                this.fit = cost
+                this.fit += costMatrix(content(size-1))(content(0))
             }
-            return(cost)
+            return(this.fit)
         }
 
-        def normalize(): Unit = {
+        def normalize() : Unit = {
             if(content(0) != 0) {
                 for(i <- 0 until size) {
                     if(content(i) == 0) {
@@ -77,7 +69,7 @@ package genetic_algorithm {
         }
 
         override def toString() : String = { 
-            return("path: " + path() + ", fitness: " + fitness().toString()); 
+            "path: " + path() + ", fitness: " + fitness().toString() 
         } 
     }
 
@@ -130,32 +122,23 @@ package genetic_algorithm {
         }
 
         def crossoverNextIndex(index: Int, size: Int) : Int = {
-            if(index + 1 == size) {
-                return(0)
-            }
-            return(index+1)
+            if (index+1 == size) (0) else (index+1)
         }
 
         def crossover(p1: Chromosome, p2: Chromosome) : (Chromosome, Chromosome) = {
             val c1 = p1.copy()
             val c2 = p2.copy()
 
-            var firstRandom: Int = Global.random.nextInt(p1.size)
-            var secondRandom: Int = Global.random.nextInt(p1.size)
-
-            if(secondRandom < firstRandom) {
-                val tmp = firstRandom
-                firstRandom = secondRandom
-                secondRandom = tmp
-            }
+            val firstRandom: Int = Global.random.nextInt(p1.size)
+            val secondRandom: Int = firstRandom + Global.random.nextInt(p1.size-firstRandom)
 
             for(i <- firstRandom until secondRandom) {
                 c1.content(i) = p2.content(i)
                 c2.content(i) = p1.content(i)
             }
 
-            var c2Used = p1.content.slice(firstRandom, secondRandom).toSet
-            var c1Used = p2.content.slice(firstRandom, secondRandom).toSet
+            val c2Used = p1.content.slice(firstRandom, secondRandom).toSet
+            val c1Used = p2.content.slice(firstRandom, secondRandom).toSet
 
             var c1Index = secondRandom
             var c2Index = secondRandom
@@ -199,13 +182,9 @@ package genetic_algorithm {
         }
 
         def bestChromosome(population: Array[Chromosome]) : Chromosome = {
-            var result: Chromosome = null
-            for(i <- 0 until populationSize) {
-                if(result == null || population(i).fitness() < result.fitness()) {
-                    result = population(i)
-                }
+            population.fold(population(0)) {
+                (acc, x) => if(x.fitness() < acc.fitness) x else acc
             }
-            return(result)
         }
 
         def resultsToCsv(data: Array[Chromosome]) = {
@@ -225,8 +204,8 @@ package genetic_algorithm {
 
                 while(index < populationSize/2) {
                     // Selection 
-                    var p1 = select(population)
-                    var p2 = select(population)
+                    val p1 = select(population)
+                    val p2 = select(population)
                     // Crossover 
                     var (c1, c2) = crossover(p1, p2)
                     // Mutation 
@@ -249,7 +228,7 @@ package genetic_algorithm {
             val data: Array[Chromosome] = Array.ofDim[Chromosome](maxIterations)
 
             for(i <- 0 until maxIterations) {
-                var newPopulation = Array.ofDim[Chromosome](populationSize)
+                val newPopulation = Array.ofDim[Chromosome](populationSize)
                 atomicIndex.set(elitesCnt/2)
 
                 // Elitism
