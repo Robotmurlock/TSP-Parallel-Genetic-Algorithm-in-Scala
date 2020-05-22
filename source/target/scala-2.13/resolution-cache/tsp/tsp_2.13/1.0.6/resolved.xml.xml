@@ -4,7 +4,7 @@
 		module="tsp_2.13"
 		revision="1.0.6"
 		status="integration"
-		publication="20200522142723"
+		publication="20200522190914"
 	>
 		<description>
 		TSP
@@ -34,25 +34,25 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.13.1" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.scalafx" name="scalafx_2.13" rev="12.0.2-R18" conf="compile->default(compile)"/>
 		<dependency org="org.openjfx" name="javafx-base" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-base" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-base" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-controls" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-controls" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-controls" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-fxml" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-fxml" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-fxml" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-graphics" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-graphics" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-graphics" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-media" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-media" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-media" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-swing" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-swing" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-swing" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 		<dependency org="org.openjfx" name="javafx-web" rev="12.0.2" conf="compile->default(compile)">
-			<artifact name="javafx-web" type="jar" ext="jar" conf="*" e:classifier="win"/>
+			<artifact name="javafx-web" type="jar" ext="jar" conf="*" e:classifier="linux"/>
 		</dependency>
 	</dependencies>
 </ivy-module>

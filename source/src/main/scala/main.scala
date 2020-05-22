@@ -24,7 +24,7 @@ object Main extends JFXApp{
     val parameterSource = io.Source.fromFile("../parameter.csv")
     val parameterSourceDelimiter = ","
 
-    var GAParameters: Map[String, String] = Map(
+    val initialGeneticAlgorithmParameters: Map[String, String] = Map(
         "costMatrix"     -> "Srbija2.csv",
         "cities"         -> "Cities2.csv",
         "image"          -> "srbija.jpg",
@@ -39,17 +39,20 @@ object Main extends JFXApp{
     val headerLine :: valueLine :: _ = parameterSource.getLines().slice(0, 2).toList
     val header: Array[String]        = headerLine.split(parameterSourceDelimiter).map(_.trim)
     val values                       = valueLine.split(parameterSourceDelimiter).map(_.trim)
-    (0 until header.size).foreach(i => GAParameters = GAParameters + (header(i) -> values(i)))
+    val geneticAlgorithmParameters = 
+        (0 until header.size).foldLeft(initialGeneticAlgorithmParameters) {
+            (acc, index) => acc + (header(index) -> values(index))
+        }
 
-    val costMatrixPath: String = GAParameters.get("costMatrix").get.replace("\"", "")
-    val citiesPath: String     = GAParameters.get("cities").get.replace("\"", "")
-    val imagePath: String      = GAParameters.get("image").get.replace("\"", "")
-    val populationSize: Int    = GAParameters.get("populationSize").get.toInt
-    val maxIterations: Int     = GAParameters.get("maxIterations").get.toInt
-    val tournamentSize: Int    = GAParameters.get("tournamentSize").get.toInt
-    val elitismRate: Double    = GAParameters.get("elitismRate").get.toDouble
-    val mutationRate: Double   = GAParameters.get("mutationRate").get.toDouble
-    val numOfThreads: Int      = GAParameters.get("numOfThreads").get.toInt
+    val costMatrixPath: String = geneticAlgorithmParameters.get("costMatrix").get.replace("\"", "")
+    val citiesPath: String     = geneticAlgorithmParameters.get("cities").get.replace("\"", "")
+    val imagePath: String      = geneticAlgorithmParameters.get("image").get.replace("\"", "")
+    val populationSize: Int    = geneticAlgorithmParameters.get("populationSize").get.toInt
+    val maxIterations: Int     = geneticAlgorithmParameters.get("maxIterations").get.toInt
+    val tournamentSize: Int    = geneticAlgorithmParameters.get("tournamentSize").get.toInt
+    val elitismRate: Double    = geneticAlgorithmParameters.get("elitismRate").get.toDouble
+    val mutationRate: Double   = geneticAlgorithmParameters.get("mutationRate").get.toDouble
+    val numOfThreads: Int      = geneticAlgorithmParameters.get("numOfThreads").get.toInt
 
     val prefix: String = "../examples/"
     val filename = prefix + costMatrixPath

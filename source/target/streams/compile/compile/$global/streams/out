@@ -1,19 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:10:8: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m    xn = x/norm[0m
-[0m[[0m[31merror[0m] [0m[0m       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:11:8: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m    yn = y/norm[0m
-[0m[[0m[31merror[0m] [0m[0m       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:15:6: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m	  x = new_x[0m
-[0m[[0m[31merror[0m] [0m[0m	    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:16:6: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m	  y = new_y[0m
-[0m[[0m[31merror[0m] [0m[0m	    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:20:10: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m    name = nm[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Filip\Documents\GitHub\2020_ParGenAlg\source\src\main\scala\vect.scala:24:10: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m	  index = ind[0m
-[0m[[0m[31merror[0m] [0m[0m	        ^[0m
-[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:44:33: reassignment to val[0m
+[0m[[0m[31merror[0m] [0m[0m            (acc, index) => acc = acc + (header(index) -> values(index))[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
