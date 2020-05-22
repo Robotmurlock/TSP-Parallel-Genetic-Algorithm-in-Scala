@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:171:40: '=' expected but '(' found.[0m
-[0m[[0m[31merror[0m] [0m[0m            def next(index: Int) : Unit() {[0m
-[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:192:1: illegal start of simple expression[0m
-[0m[[0m[31merror[0m] [0m[0m            def run() : Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:1:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mjava.security.SecureRandom[0m
 [0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

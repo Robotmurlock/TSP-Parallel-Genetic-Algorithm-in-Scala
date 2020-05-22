@@ -1,11 +1,11 @@
-import scala.util.Random
+import java.security.SecureRandom
 import scala.util.Sorting
 import java.io._
 import java.util.concurrent.atomic.AtomicInteger
 
 package genetic_algorithm {
     object Global {
-        val random = new Random
+        val random = new SecureRandom
     }
 
     class Chromosome(val size: Int, val costMatrix: Array[Array[Double]]) {
@@ -29,9 +29,8 @@ package genetic_algorithm {
 
         def copy() : Chromosome = {
             val chrom = new Chromosome(size, costMatrix)
-            val copiedContent = content.clone()
-            (0 until size).foreach(index => chrom.content(index) = copiedContent(index))
-            return(chrom)
+            (0 until size).foreach(index => chrom.content(index) = content(index))
+            chrom
         }
         
         // returns path as string
@@ -69,7 +68,7 @@ package genetic_algorithm {
     class GA(val costMatrix: Array[Array[Double]],
              val populationSize: Int, 
              val maxIterations: Int,
-             val _tournamentSize: Int,
+             val potentialTournamentSize: Int,
              val elitismRatio: Double, 
              val mutationRate: Double,
              val numOfThreads: Int,
@@ -78,17 +77,17 @@ package genetic_algorithm {
         val chromosomeSize = costMatrix.size
         val elitesCnt: Int = (populationSize*elitismRatio).toInt
         val atomicIndex: AtomicInteger = new AtomicInteger(elitesCnt/2)
-        val tournamentSize = if (_tournamentSize > populationSize) {
-            println("Tournament size(" + _tournamentSize.toString() + ") is bigger than population size(" + populationSize.toString() + "). Reducing tournament size to population size.")
+        val tournamentSize = if (potentialTournamentSize > populationSize) {
+            println("Tournament size(" + potentialTournamentSize.toString() + ") is bigger than population size(" + populationSize.toString() + "). Reducing tournament size to population size.")
             populationSize
-        } else _tournamentSize
+        } else potentialTournamentSize
 
         def compare(a: Chromosome, b: Chromosome) = a.fitness() compare b.fitness()
 
         def initPopulation(size: Int) : Array[Chromosome] = {
-            val newPopulation = Array.ofDim[Chromosome](populationSize)
-            (0 until populationSize).foreach(index => newPopulation(index) = new Chromosome(size, costMatrix))
-            return(newPopulation)
+            (for(i <- 0 until populationSize) 
+                yield (new Chromosome(size, costMatrix))
+            ).toArray
         }
 
         def select(population: Array[Chromosome]) : Chromosome = {
@@ -97,9 +96,18 @@ package genetic_algorithm {
                 val r: Int = Global.random.nextInt(populationSize-1)
                 randomArray(i) = population(r)
             }
-            val bestChromosomeIndex = ((randomArray zip (1 until tournamentSize)).fold((randomArray(0), 0)) {
-                (acc, x) => if (x._1.fitness() < acc._1.fitness()) x else acc
-            })._2
+            val bestChromosomeIndex = {
+                val indexedRandomArray = randomArray zip (1 until tournamentSize)
+                val initialMinimum = randomArray(0)
+                val initialIndex   = 0
+                indexedRandomArray.fold((initialMinimum, initialIndex)) {
+                    (acc, next) => {
+                        val currentBestFitness = acc._1.fitness()
+                        val nextFitness        = next._1.fitness()
+                        if (nextFitness < currentBestFitness) next else acc
+                    }
+                }._2
+            }
             population(bestChromosomeIndex)
         }
 
@@ -114,10 +122,12 @@ package genetic_algorithm {
             val firstRandom: Int = Global.random.nextInt(p1.size)
             val secondRandom: Int = firstRandom + Global.random.nextInt(p1.size-firstRandom)
 
-            for(i <- firstRandom until secondRandom) {
-                c1.content(i) = p2.content(i)
-                c2.content(i) = p1.content(i)
-            }
+            (firstRandom until secondRandom).foreach(
+                index => {
+                    c1.content(index) = p2.content(index)
+                    c2.content(index) = p1.content(index)
+                }
+            )
 
             val c2Used = p1.content.slice(firstRandom, secondRandom).toSet
             val c1Used = p2.content.slice(firstRandom, secondRandom).toSet
@@ -125,17 +135,26 @@ package genetic_algorithm {
             var c1Index = secondRandom
             var c2Index = secondRandom
 
-            for(i <- (secondRandom until p1.size) ++ (0 until secondRandom)) {
-                if(!(c1Used contains p1.content(i))) {
-                    c1.content(c1Index) = p1.content(i)
-                    c1Index = crossoverNextIndex(c1Index, p1.size)
-                }
-                if(!(c2Used contains p2.content(i))) {
-                    c2.content(c2Index) = p2.content(i)
-                    c2Index = crossoverNextIndex(c2Index, p1.size)
+            ((secondRandom until p1.size) ++ (0 until secondRandom)).foldLeft((secondRandom, secondRandom)) {
+                (acc, index) => {
+                    val c1Index = acc._1
+                    val c2Index = acc._2
+
+                    val c1IndexNext = if (c1Used contains p1.content(index)) c1Index
+                                      else {
+                                          c1.content(c1Index) = p1.content(index)
+                                          crossoverNextIndex(c1Index, p1.size)
+                                      }
+                    val c2IndexNext = if (c2Used contains p2.content(index)) c2Index
+                                      else {
+                                          c2.content(c2Index) = p2.content(index)
+                                          crossoverNextIndex(c2Index, p1.size)
+                                      }
+                    (c1Index, c2Index)
                 }
             }
-            return(c1, c2)
+
+            (c1, c2)
         }
 
         def mutate(c: Chromosome) : Chromosome = {
@@ -148,7 +167,8 @@ package genetic_algorithm {
                 mutated.content(firstRandom) = mutated.content(secondRandom)
                 mutated.content(secondRandom) = tmp
             }
-            return(mutated)
+
+            mutated
         }
 
         def bestChromosome(population: Array[Chromosome]) : Chromosome = {
