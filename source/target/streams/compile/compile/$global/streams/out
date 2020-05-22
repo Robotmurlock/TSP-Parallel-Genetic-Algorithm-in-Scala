@@ -1,6 +1,46 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/reader.scala:22:26: constructor cannot be instantiated to expected type;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : scala.collection.immutable.::[A][0m
-[0m[[0m[31merror[0m] [0m[0m required: Array[String][0m
-[0m[[0m[31merror[0m] [0m[0m                val name :: columns = line.split(delimiter).map(_.trim)[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:44:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("costMatrix")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "costMatrix"      => GAParameters.updated("costMatrix"     , values(i).replace("\"", ""))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:45:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("cities")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "cities"          => GAParameters.updated("cities"         , values(i).replace("\"", ""))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:46:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("image")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "image"           => GAParameters.updated("image"          , values(i).replace("\"", ""))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:47:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("populationSize")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "populationSize"  => GAParameters.updated("populationSize" , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:48:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("maxIterations")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "maxIterations"   => GAParameters.updated("maxIterations"  , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:49:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("tournamentSize")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "tournamentSize"  => GAParameters.updated("tournamentSize" , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:50:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("elitismRate")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "elitismRate"     => GAParameters.updated("elitismRate"    , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:51:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("mutationRate")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "mutationRate"    => GAParameters.updated("mutationRate"   , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:52:22: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("numOfThreads")[0m
+[0m[[0m[31merror[0m] [0m[0m required: (String, String)[0m
+[0m[[0m[31merror[0m] [0m[0m                case "numOfThreads"    => GAParameters.updated("numOfThreads"   , values(i))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m9 errors found[0m

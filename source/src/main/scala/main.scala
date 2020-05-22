@@ -24,33 +24,32 @@ object Main extends JFXApp{
     val parameterSource = io.Source.fromFile("../parameter.csv")
     val parameterSourceDelimiter = ","
 
-    var costMatrixPath: String = "Srbija2.csv"
-    var citiesPath: String     = "Cities2.csv"
-    var imagePath: String      = "srbija.jpg"
-    var populationSize: Int    = 1000
-    var maxIterations: Int     = 100
-    var tournamentSize: Int    = 20
-    var elitismRate: Double    = 0.2
-    var mutationRate: Double   = 0.01
-    var numOfThreads: Int      = 10
+    var GAParameters: Map[String, String] = Map(
+        "costMatrix"     -> "Srbija2.csv",
+        "cities"         -> "Cities2.csv",
+        "image"          -> "srbija.jpg",
+        "populationSize" -> "1000",
+        "maxIterations"  -> "100",
+        "tournamentSize" -> "20",
+        "elitismRate"    -> "0.2",
+        "mutationRate"   -> "0.01",
+        "numOfThreads"   -> "10"
+    )
 
     val headerLine :: valueLine :: _ = parameterSource.getLines().slice(0, 2).toList
     val header: Array[String]        = headerLine.split(parameterSourceDelimiter).map(_.trim)
     val values                       = valueLine.split(parameterSourceDelimiter).map(_.trim)
-    for(i <- 0 until header.size) {
-        header(i) match {
-            case "costMatrix"      => costMatrixPath  = values(i).replace("\"", "")
-            case "cities"          => citiesPath      = values(i).replace("\"", "")
-            case "image"           => imagePath       = values(i).replace("\"", "")
-            case "populationSize"  => populationSize  = values(i).toInt
-            case "maxIterations"   => maxIterations   = values(i).toInt
-            case "tournamentSize"  => tournamentSize  = values(i).toInt
-            case "elitismRate"     => elitismRate     = values(i).toDouble
-            case "mutationRate"    => mutationRate    = values(i).toDouble
-            case "numOfThreads"    => numOfThreads    = values(i).toInt
-            case _                 => println("Warning: Unknown header!")
-        }
-    }
+    (0 until header.size).foreach(i => GAParameters = GAParameters + (header(i) -> values(i)))
+
+    val costMatrixPath: String = GAParameters.get("costMatrix").get.replace("\"", "")
+    val citiesPath: String     = GAParameters.get("cities").get.replace("\"", "")
+    val imagePath: String      = GAParameters.get("image").get.replace("\"", "")
+    val populationSize: Int    = GAParameters.get("populationSize").get.toInt
+    val maxIterations: Int     = GAParameters.get("maxIterations").get.toInt
+    val tournamentSize: Int    = GAParameters.get("tournamentSize").get.toInt
+    val elitismRate: Double    = GAParameters.get("elitismRate").get.toDouble
+    val mutationRate: Double   = GAParameters.get("mutationRate").get.toDouble
+    val numOfThreads: Int      = GAParameters.get("numOfThreads").get.toInt
 
     val prefix: String = "../examples/"
     val filename = prefix + costMatrixPath

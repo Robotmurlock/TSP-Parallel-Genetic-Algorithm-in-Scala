@@ -37,7 +37,8 @@ package reader {
                     costMatrix(i)(j) = sc.nextDouble()
                 }
             }
-            return(costMatrix)
+            
+            costMatrix
         }
     }
 }
