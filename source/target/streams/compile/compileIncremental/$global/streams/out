@@ -17,7 +17,7 @@
 [0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.2.5:compile for Scala 2.13.1[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 847f24 for Scala compiler version 2.13.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 2cfb4f03 for Scala compiler version 2.13.1[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-unchecked[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-deprecation[0m
@@ -28,7 +28,7 @@
 [0m[[0m[0mdebug[0m] [0m[0m	/home/mokoyo/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.13.1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes:/home/mokoyo/.ivy2/cache/org.scalafx/scalafx_2.13/jars/scalafx_2.13-12.0.2-R18.jar:/home/mokoyo/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.13.1.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-base/jars/javafx-base-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-controls/jars/javafx-controls-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-graphics/jars/javafx-graphics-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-fxml/jars/javafx-fxml-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-media/jars/javafx-media-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-swing/jars/javafx-swing-12.0.2-linux.jar:/home/mokoyo/.ivy2/cache/org.openjfx/javafx-web/jars/javafx-web-12.0.2-linux.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 5.662227297 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.212852147 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m

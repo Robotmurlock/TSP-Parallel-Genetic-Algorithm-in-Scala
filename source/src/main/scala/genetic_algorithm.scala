@@ -100,10 +100,13 @@ package genetic_algorithm {
                 val indexedRandomArray = randomArray zip (1 until tournamentSize)
                 val initialMinimum = randomArray(0)
                 val initialIndex   = 0
-                indexedRandomArray.fold((initialMinimum, initialIndex)) {
+                val initial = (initialMinimum, initialIndex)
+                indexedRandomArray.fold(initial) {
                     (acc, next) => {
-                        val currentBestFitness = acc._1.fitness()
-                        val nextFitness        = next._1.fitness()
+                        val currentBestChromosome = acc._1
+                        val currentBestFitness    = currentBestChromosome.fitness()
+                        val nextChromosome        = next._1
+                        val nextFitness           = nextChromosome.fitness()
                         if (nextFitness < currentBestFitness) next else acc
                     }
                 }._2
@@ -129,13 +132,11 @@ package genetic_algorithm {
                 }
             )
 
-            val c2Used = p1.content.slice(firstRandom, secondRandom).toSet
-            val c1Used = p2.content.slice(firstRandom, secondRandom).toSet
+            val c2Used  = p1.content.slice(firstRandom, secondRandom).toSet
+            val c1Used  = p2.content.slice(firstRandom, secondRandom).toSet
+            val initial = (secondRandom, secondRandom)
 
-            var c1Index = secondRandom
-            var c2Index = secondRandom
-
-            ((secondRandom until p1.size) ++ (0 until secondRandom)).foldLeft((secondRandom, secondRandom)) {
+            ((secondRandom until p1.size) ++ (0 until secondRandom)).foldLeft(initial) {
                 (acc, index) => {
                     val c1Index = acc._1
                     val c2Index = acc._2
