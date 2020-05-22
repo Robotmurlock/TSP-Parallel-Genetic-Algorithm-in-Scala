@@ -56,7 +56,6 @@ package genetic_algorithm {
                     if(content(i) == 0) {
                         val normalizedContent = content.drop(i) ++ content.take(i)
                         (0 until size).foreach(index => content(index) = normalizedContent(index))
-                        return()
                     }
                 }
             }
@@ -70,7 +69,7 @@ package genetic_algorithm {
     class GA(val costMatrix: Array[Array[Double]],
              val populationSize: Int, 
              val maxIterations: Int,
-             var tournamentSize: Int,
+             val _tournamentSize: Int,
              val elitismRatio: Double, 
              val mutationRate: Double,
              val numOfThreads: Int,
@@ -79,11 +78,10 @@ package genetic_algorithm {
         val chromosomeSize = costMatrix.size
         val elitesCnt: Int = (populationSize*elitismRatio).toInt
         val atomicIndex: AtomicInteger = new AtomicInteger(elitesCnt/2)
-
-        if(tournamentSize > populationSize) {
-            println("Tournament size(" + tournamentSize.toString() + ") is bigger than population size(" + populationSize.toString() + "). Reducing tournament size to population size.")
-            tournamentSize = populationSize
-        }
+        val tournamentSize = if (_tournamentSize > populationSize) {
+            println("Tournament size(" + _tournamentSize.toString() + ") is bigger than population size(" + populationSize.toString() + "). Reducing tournament size to population size.")
+            populationSize
+        } else _tournamentSize
 
         def compare(a: Chromosome, b: Chromosome) = a.fitness() compare b.fitness()
 
@@ -170,33 +168,34 @@ package genetic_algorithm {
         }
 
         class EvolutionRunnable(population: Array[Chromosome], newPopulation: Array[Chromosome]) extends Runnable {
-            def run() : Unit = {
-
-                var index: Int = atomicIndex.getAndIncrement()
-
-                while(index < populationSize/2) {
+            def next(index: Int) : Unit = {
+                if(index < populationSize/2) {
                     // Selection 
                     val p1 = select(population)
                     val p2 = select(population)
                     // Crossover 
                     val (c1, c2) = crossover(p1, p2)
                     // Mutation (with normalization)
-                    val c1_mutated = mutate(c1)
-                    val c2_mutated = mutate(c2)
+                    val c1Mutated = mutate(c1)
+                    val c2Mutated = mutate(c2)
                     // normalization
-                    c1_mutated.normalize()
-                    c2_mutated.normalize()
+                    c1Mutated.normalize()
+                    c2Mutated.normalize()
                     // adding mutated chromosomes to new population
-                    newPopulation(2*index) = c1_mutated
-                    newPopulation(2*index+1) = c2_mutated
+                    newPopulation(2*index) = c1Mutated
+                    newPopulation(2*index+1) = c2Mutated
                     // updating global index
-                    index = atomicIndex.getAndIncrement()
+                    next(atomicIndex.getAndIncrement())
                 }
+            }
+
+            def run() : Unit = {
+                next(atomicIndex.getAndIncrement())
             }
         }
 
         def run() : Unit = {
-            var population: Array[Chromosome] = initPopulation(chromosomeSize)
+            val population: Array[Chromosome] = initPopulation(chromosomeSize)
             val data: Array[Chromosome] = Array.ofDim[Chromosome](maxIterations)
 
             for(i <- 0 until maxIterations) {
@@ -216,7 +215,7 @@ package genetic_algorithm {
                 threads.foreach(t => t.join())
 
                 // Replacement
-                population = newPopulation
+                (0 until populationSize).foreach(index => population(i) = newPopulation(i))
 
                 // Algorithm status 
                 data(i) = bestChromosome(population).copy()
