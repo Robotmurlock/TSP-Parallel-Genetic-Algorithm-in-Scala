@@ -6,6 +6,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Main$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Main$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Main$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Vect$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Vect$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Main$$anon$1$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Main$$anon$1$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	reader/TXTReader.class[0m
@@ -14,14 +16,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/genetic_algorithm/GA$$anonfun$$nestedInanonfun$run$1$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Main$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	vect.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/vect.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/GA$EvolutionRunnable.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/genetic_algorithm/GA$EvolutionRunnable.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	reader/CSVReader$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/reader/CSVReader$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/Global$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/genetic_algorithm/Global$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Vect.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/Vect.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	genetic_algorithm/Global.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/target/scala-2.13/classes/genetic_algorithm/Global.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	reader[0m

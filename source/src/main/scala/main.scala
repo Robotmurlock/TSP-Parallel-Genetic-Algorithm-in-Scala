@@ -23,54 +23,42 @@ import scalafx.event.ActionEvent
 object Main extends JFXApp{
     val parameterSource = io.Source.fromFile("../parameter.csv")
     val parameterSourceDelimiter = ","
-    var firstLine: Boolean = true;
-    var header: Array[String] = null
 
     var costMatrixPath: String = "Srbija2.csv"
-    var citiesPath: String = "Cities2.csv"
-    var imagePath: String = "srbija.jpg"
-    var populationSize: Int = 1000
-    var maxIterations: Int = 100
-    var tournamentSize: Int = 20
-    var elitismRate: Double = 0.2
-    var mutationRate: Double = 0.01
-    var numOfThreads: Int = 10
+    var citiesPath: String     = "Cities2.csv"
+    var imagePath: String      = "srbija.jpg"
+    var populationSize: Int    = 1000
+    var maxIterations: Int     = 100
+    var tournamentSize: Int    = 20
+    var elitismRate: Double    = 0.2
+    var mutationRate: Double   = 0.01
+    var numOfThreads: Int      = 10
 
-    for (line <- parameterSource.getLines().slice(0, 2)) {
-        var cols = line.split(parameterSourceDelimiter).map(_.trim)
-        if(!firstLine) {
-            for(i <- 0 until cols.size) {
-                header(i) match {
-                    case "costMatrix"      => costMatrixPath  = cols(i).replace("\"", "")
-                    case "cities"          => citiesPath      = cols(i).replace("\"", "")
-                    case "image"           => imagePath       = cols(i).replace("\"", "")
-                    case "populationSize"  => populationSize  = cols(i).toInt
-                    case "maxIterations"   => maxIterations   = cols(i).toInt
-                    case "tournamentSize"  => tournamentSize  = cols(i).toInt
-                    case "elitismRate"     => elitismRate     = cols(i).toDouble
-                    case "mutationRate"    => mutationRate    = cols(i).toDouble
-                    case "numOfThreads"    => numOfThreads    = cols(i).toInt
-                    case _                 => println("Warning: Unknown header!")
-                }
-            }
-        }
-        else {
-            firstLine = false
-            header = cols
+    val headerLine :: valueLine :: _ = parameterSource.getLines().slice(0, 2).toList
+    val header: Array[String]        = headerLine.split(parameterSourceDelimiter).map(_.trim)
+    val values                       = valueLine.split(parameterSourceDelimiter).map(_.trim)
+    for(i <- 0 until header.size) {
+        header(i) match {
+            case "costMatrix"      => costMatrixPath  = values(i).replace("\"", "")
+            case "cities"          => citiesPath      = values(i).replace("\"", "")
+            case "image"           => imagePath       = values(i).replace("\"", "")
+            case "populationSize"  => populationSize  = values(i).toInt
+            case "maxIterations"   => maxIterations   = values(i).toInt
+            case "tournamentSize"  => tournamentSize  = values(i).toInt
+            case "elitismRate"     => elitismRate     = values(i).toDouble
+            case "mutationRate"    => mutationRate    = values(i).toDouble
+            case "numOfThreads"    => numOfThreads    = values(i).toInt
+            case _                 => println("Warning: Unknown header!")
         }
     }
 
     val prefix: String = "../examples/"
     val filename = prefix + costMatrixPath
 
-    var costMatrix: Array[Array[Double]] = null
-    if(costMatrixPath.endsWith(".csv")) {
-        costMatrix = CSVReader.read(filename)
-    }
-    else if(costMatrixPath.endsWith(".txt")){
-        costMatrix = TXTReader.read(filename)
-    } else {
-        throw new Exception("Invalid file extension! Usage: run [FILE_NAME].[csv|txt]")
+    val costMatrix: Array[Array[Double]] = costMatrixPath.takeRight(4) match {
+        case ".csv" => CSVReader.read(filename)
+        case ".txt" => TXTReader.read(filename)
+        case _      => throw new Exception("Invalid file extension! Usage: run [FILE_NAME].[csv|txt]")
     }
 
     val ga = new GA(costMatrix, 
@@ -84,18 +72,18 @@ object Main extends JFXApp{
     ga.run()
 
 
-    var salesman = new vect(0, 0)
+    var salesman = new Vect(0, 0)
     //Find a city with given index from the input file
-    def findCity(cities: ArrayBuffer[vect], index: Int) : vect = {
+    def findCity(cities: ArrayBuffer[Vect], index: Int) : Vect = {
         for(c <- cities ){
             if(c.index == index){
-            var found = new vect(c.x, c.y)  
+            var found = new Vect(c.x, c.y)  
             found.named(c.name)
             found.setIndex(index)
             return found
             }
         }
-        return new vect(-1, -1)
+        return new Vect(-1, -1)
     }
 
 
@@ -130,12 +118,10 @@ object Main extends JFXApp{
             //}
             
             //time measurement for each generation
-            var timeStart = System.nanoTime
-            var duration = (System.nanoTime - timeStart)/1e9d
-            
+            var timeStart = System.nanoTime            
             
             //points/cities displayed on the map
-            var points = ArrayBuffer[vect]()
+            var points = ArrayBuffer[Vect]()
             
             val fileorder = prefix + "result.csv"
             
@@ -167,7 +153,7 @@ object Main extends JFXApp{
             val filename = prefix + citiesPath
             for (line <- Source.fromFile(filename).getLines.drop(1)) {
                 val coordinates = line.split(',').map(_.trim)
-                points += new vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
+                points += new Vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
                 points.last.named(coordinates(0))
                 points.last.setIndex(coordinates(3).toInt)
             }
@@ -176,7 +162,7 @@ object Main extends JFXApp{
 
             val salesmanSpeed = 5
             
-            val salesmanMov = new vect(0, 0)
+            val salesmanMov = new Vect(0, 0)
 
 
 			//indicator for the cities help determianting the color on the map
@@ -190,12 +176,11 @@ object Main extends JFXApp{
             
             var currentCity = findCity(points, order(0))
             //setting salesman starting position in generation 0
-            salesman.x = currentCity.x
-            salesman.y = currentCity.y
+            salesman = new Vect(currentCity.x, currentCity.y)
             
             
             currentCity = findCity(points, order(visited))
-            //setting salesman movement vector based on the order 
+            //setting salesman movement Vector based on the order 
             salesmanMov.x = currentCity.x - salesman.x
             salesmanMov.y = currentCity.y - salesman.y
             salesmanMov.normalize()
@@ -211,7 +196,7 @@ object Main extends JFXApp{
                     
                     visited = 0
 					//showing the time of the previous generation
-					var duration = (System.nanoTime - timeStart)/1e9d
+					val duration = (System.nanoTime - timeStart)/1e9d
 					println("Potrebno vreme za obilazak u sekundama: " + duration)
 					
 					//leaveing room for the preview of the finished generation

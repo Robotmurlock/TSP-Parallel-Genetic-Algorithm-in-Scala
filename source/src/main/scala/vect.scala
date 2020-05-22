@@ -1,10 +1,6 @@
-class vect(xc: Double, yc: Double){
-  var x: Double = xc
-  var y: Double = yc
-  var name: String = ""
-  var index: Int = -1
+class Vect(var x: Double, var y: Double, var name: String = "", var index: Int = -1){
   
-  def normalize(): Unit = {
+  def normalize() : Unit = {
     val norm: Double = Math.sqrt(x*x + y*y)
     x = x/norm
     y = y/norm
