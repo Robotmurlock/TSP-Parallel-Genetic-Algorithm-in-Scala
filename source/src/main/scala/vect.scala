@@ -4,17 +4,17 @@ class vect(xc: Double, yc: Double){
   var name: String = ""
   var index: Int = -1
   
-  def normalize(){
+  def normalize(): Unit = {
     var norm: Double = Math.sqrt(x*x + y*y)
     x = x/norm
     y = y/norm
   }
   
-  def named(nm: String){
+  def named(nm: String): Unit = {
     name = nm
   }
   
-  def setIndex(ind: Int){
+  def setIndex(ind: Int): Unit = {
 	  index = ind
   }
   

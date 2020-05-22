@@ -23,68 +23,68 @@ import scalafx.event.ActionEvent
 object Main extends JFXApp{
     val parameterSource = io.Source.fromFile("../parameter.csv")
     var parameterSourceDelimiter = ","
-    var first_line: Boolean = true;
+    var firstLine: Boolean = true;
     var header: Array[String] = null
 
-    var cost_matrix_path: String = "Srbija2.csv"
-    var cities_path: String = "Cities2.csv"
-    var image_path: String = "srbija.jpg"
-    var population_size: Int = 1000
-    var max_iterations: Int = 100
-    var tournament_size: Int = 20
-    var elitism_rate: Double = 0.2
-    var mutation_rate: Double = 0.01
-    var num_of_threads: Int = 10
+    var costMatrixPath: String = "Srbija2.csv"
+    var citiesPath: String = "Cities2.csv"
+    var imagePath: String = "srbija.jpg"
+    var populationSize: Int = 1000
+    var maxIterations: Int = 100
+    var tournamentSize: Int = 20
+    var elitismRate: Double = 0.2
+    var mutationRate: Double = 0.01
+    var numOfThreads: Int = 10
 
     for (line <- parameterSource.getLines().slice(0, 2)) {
         var cols = line.split(parameterSourceDelimiter).map(_.trim)
-        if(!first_line) {
+        if(!firstLine) {
             for(i <- 0 until cols.size) {
                 header(i) match {
-                    case "cost_matrix"     => cost_matrix_path = cols(i).replace("\"", "")
-                    case "cities"          => cities_path      = cols(i).replace("\"", "")
-                    case "image"           => image_path       = cols(i).replace("\"", "")
-                    case "population_size" => population_size  = cols(i).toInt
-                    case "max_iterations"  => max_iterations   = cols(i).toInt
-                    case "tournament_size" => tournament_size  = cols(i).toInt
-                    case "elitism_rate"    => elitism_rate     = cols(i).toDouble
-                    case "mutation_rate"   => mutation_rate    = cols(i).toDouble
-                    case "num_of_threads"  => num_of_threads   = cols(i).toInt
+                    case "costMatrix"      => costMatrixPath  = cols(i).replace("\"", "")
+                    case "cities"          => citiesPath      = cols(i).replace("\"", "")
+                    case "image"           => imagePath       = cols(i).replace("\"", "")
+                    case "populationSize"  => populationSize  = cols(i).toInt
+                    case "maxIterations"   => maxIterations   = cols(i).toInt
+                    case "tournamentSize"  => tournamentSize  = cols(i).toInt
+                    case "elitismRate"     => elitismRate     = cols(i).toDouble
+                    case "mutationRate"    => mutationRate    = cols(i).toDouble
+                    case "numOfThreads"    => numOfThreads    = cols(i).toInt
                     case _                 => println("Warning: Unknown header!")
                 }
             }
         }
         else {
-            first_line = false
+            firstLine = false
             header = cols
         }
     }
 
     val prefix: String = "../examples/"
-    val filename = prefix + cost_matrix_path
+    val filename = prefix + costMatrixPath
 
-    var cost_matrix: Array[Array[Double]] = null
-    if(cost_matrix_path.endsWith(".csv")) {
-        cost_matrix = CSVReader.read(filename)
+    var costMatrix: Array[Array[Double]] = null
+    if(costMatrixPath.endsWith(".csv")) {
+        costMatrix = CSVReader.read(filename)
     }
-    else if(cost_matrix_path.endsWith(".txt")){
-        cost_matrix = TXTReader.read(filename)
+    else if(costMatrixPath.endsWith(".txt")){
+        costMatrix = TXTReader.read(filename)
     } else {
         throw new Exception("Invalid file extension! Usage: run [FILE_NAME].[csv|txt]")
     }
 
-    val ga = new GA(cost_matrix, 
-                    population_size, 
-                    max_iterations, 
-                    tournament_size, 
-                    elitism_rate, 
-                    mutation_rate, 
-                    num_of_threads, 
+    val ga = new GA(costMatrix, 
+                    populationSize, 
+                    maxIterations, 
+                    tournamentSize, 
+                    elitismRate, 
+                    mutationRate, 
+                    numOfThreads, 
                     prefix)
     ga.run()
 
 
-    var Salesman = new vect(0, 0)
+    var salesman = new vect(0, 0)
     //Find a city with given index from the input file
     def findCity(Cities: ArrayBuffer[vect], index: Int) : vect = {
         for(c <- Cities ){
@@ -104,7 +104,7 @@ object Main extends JFXApp{
         title = "Animation"
         
         //Loading the serbia map
-        val img = new Image("file:" + prefix + image_path)
+        val img = new Image("file:" + prefix + imagePath)
         
         //default image dimensions
         val imageWidth = 370
@@ -137,15 +137,15 @@ object Main extends JFXApp{
             //points/cities displayed on the map
             var Points = ArrayBuffer[vect]()
             
-            val fileOrder = prefix + "result.csv"
+            val fileorder = prefix + "result.csv"
             
             //reading the order of the salesman tour for every generation
-            val iterLine = io.Source.fromFile(fileOrder).getLines.drop(1)
+            val iterLine = io.Source.fromFile(fileorder).getLines.drop(1)
             
             
-            val generationStep = ga.max_iterations/10
+            val generationStep = ga.maxIterations/10
             
-            var Order = ArrayBuffer[Int]()
+            var order = ArrayBuffer[Int]()
             
             //loading order of 1 generation at a time
             if(iterLine.hasNext) {
@@ -156,15 +156,15 @@ object Main extends JFXApp{
                 println("Generacija " + cols(0))
                 
                 for(City <- travelOrder){
-                    Order += City.toInt
+                    order += City.toInt
                 }
                 iterLine.drop(generationStep)
             }
-            var Visited = 0
+            var visited = 0
             
             
             //loading each city to display
-            val filename = prefix + cities_path
+            val filename = prefix + citiesPath
             for (line <- Source.fromFile(filename).getLines.drop(1)) {
                 val coordinates = line.split(',').map(_.trim)
                 Points += new vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
@@ -174,9 +174,9 @@ object Main extends JFXApp{
             
             
 
-            val SalesmanSpeed = 5
+            val salesmanSpeed = 5
             
-            val SalesmanMov = new vect(0, 0)
+            val salesmanMov = new vect(0, 0)
 
 
 			//indicator for the cities help determianting the color on the map
@@ -188,28 +188,28 @@ object Main extends JFXApp{
             
             
             
-            var currentCity = findCity(Points, Order(0))
+            var currentCity = findCity(Points, order(0))
             //setting salesman starting position in generation 0
-            Salesman.x = currentCity.x
-            Salesman.y = currentCity.y
+            salesman.x = currentCity.x
+            salesman.y = currentCity.y
             
             
-            currentCity = findCity(Points, Order(Visited))
+            currentCity = findCity(Points, order(visited))
             //setting salesman movement vector based on the order 
-            SalesmanMov.x = currentCity.x - Salesman.x
-            SalesmanMov.y = currentCity.y - Salesman.y
-            SalesmanMov.normalize()
+            salesmanMov.x = currentCity.x - salesman.x
+            salesmanMov.y = currentCity.y - salesman.y
+            salesmanMov.normalize()
             
             
             val timer = AnimationTimer { time =>
                 gc.drawImage(img, 0, 0)
                 
                 //transition to the display of next generation
-                if(Visited == Order.size){
-                    Order = ArrayBuffer[Int]()
+                if(visited == order.size){
+                    order = ArrayBuffer[Int]()
                 
                     
-                    Visited = 0
+                    visited = 0
 					//showing the time of the previous generation
 					var duration = (System.nanoTime - timeStart)/1e9d
 					println("Potrebno vreme za obilazak u sekundama: " + duration)
@@ -227,18 +227,18 @@ object Main extends JFXApp{
                     
                         val travelOrder = cols(2).replace("\"", "").trim().split(";")
                         for(City <- travelOrder){
-                            Order += City.toInt
+                            order += City.toInt
                         }
                         //reseting location  of the salesman
-                        currentCity = findCity(Points, Order(0))
-                        Salesman.x = currentCity.x
-						Salesman.y = currentCity.y
+                        currentCity = findCity(Points, order(0))
+                        salesman.x = currentCity.x
+						salesman.y = currentCity.y
                         
-                        currentCity = findCity(Points, Order(Visited))
+                        currentCity = findCity(Points, order(visited))
 
-                        SalesmanMov.x = currentCity.x - Salesman.x
-                        SalesmanMov.y = currentCity.y - Salesman.y
-                        SalesmanMov.normalize()
+                        salesmanMov.x = currentCity.x - salesman.x
+                        salesmanMov.y = currentCity.y - salesman.y
+                        salesmanMov.normalize()
                         
                         
                         //reseting visited used to determine the color of the city
@@ -251,17 +251,17 @@ object Main extends JFXApp{
                 }
                 
                 //check if the salesman has come to the city and advancing to the next city if he had visited the previous
-                currentCity = findCity(Points, Order(Visited))
-                if(Visited < Order.size && (Salesman.x - currentCity.x).abs <= SalesmanSpeed && (Salesman.y - currentCity.y).abs <= SalesmanSpeed) {
-                    visitedCities(Order(Visited)) = true
+                currentCity = findCity(Points, order(visited))
+                if(visited < order.size && (salesman.x - currentCity.x).abs <= salesmanSpeed && (salesman.y - currentCity.y).abs <= salesmanSpeed) {
+                    visitedCities(order(visited)) = true
                     println("Posetio sam " + currentCity.name)
-                    Visited += 1
-                    if(Visited != Order.size) {
-                        currentCity = findCity(Points, Order(Visited))
+                    visited += 1
+                    if(visited != order.size) {
+                        currentCity = findCity(Points, order(visited))
                 
-                        SalesmanMov.x = currentCity.x - Salesman.x
-                        SalesmanMov.y = currentCity.y - Salesman.y
-                        SalesmanMov.normalize()
+                        salesmanMov.x = currentCity.x - salesman.x
+                        salesmanMov.y = currentCity.y - salesman.y
+                        salesmanMov.normalize()
                     }
                 }
                 
@@ -277,9 +277,9 @@ object Main extends JFXApp{
                 
                 //movement of the salesman
                 gc.fill = Color.Cyan
-                Salesman.x = Salesman.x + SalesmanMov.x*SalesmanSpeed
-                Salesman.y = Salesman.y + SalesmanMov.y*SalesmanSpeed
-                gc.fillRect(Salesman.x, Salesman.y, 10, 10)
+                salesman.x = salesman.x + salesmanMov.x*salesmanSpeed
+                salesman.y = salesman.y + salesmanMov.y*salesmanSpeed
+                gc.fillRect(salesman.x, salesman.y, 10, 10)
             }
             timer.start()
         }
