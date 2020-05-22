@@ -28,13 +28,18 @@ package reader {
     }
 
     object TXTReader {
-        def read(file: String) : Array[Array[Double]] = {
-            val sc = new Scanner(new File(file))
-            val dimension = sc.nextInt()
+        def read(file: String) : Array[Array[Double]] = {  
+            implicit val codec = Codec("UTF-8")
+            codec.onMalformedInput(CodingErrorAction.REPLACE)
+            codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
+            val bufferedSource = io.Source.fromFile(file)
+            val header :: lines = bufferedSource.getLines().toList
+            val dimension = header.toInt
             val costMatrix = Array.ofDim[Double](dimension, dimension)
-            for(i <- 0 until dimension) {
-                for(j <- 0 until dimension) {
-                    costMatrix(i)(j) = sc.nextDouble()
+            for ((line, rowIndex) <- lines zip (0 until lines.size)) {
+                val name :: columns = line.split(" ").map(_.trim).toList.filter(x => x.trim() != "")
+                for ((cell, columnIndex) <- columns zip (0 until columns.size)) {
+                    costMatrix(rowIndex)(columnIndex) = cell.toDouble
                 }
             }
             

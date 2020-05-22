@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/reader.scala:40:50: not found: value delimiter[0m
+[0m[[0m[31merror[0m] [0m[0m                val name :: columns = line.split(delimiter).map(_.trim).toList[0m
+[0m[[0m[31merror[0m] [0m[0m                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/reader.scala:42:62: value toDouble is not a member of Any[0m
+[0m[[0m[31merror[0m] [0m[0m                    costMatrix(rowIndex)(columnIndex) = cell.toDouble[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
