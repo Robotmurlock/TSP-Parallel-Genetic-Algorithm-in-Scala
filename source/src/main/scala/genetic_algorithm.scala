@@ -10,8 +10,7 @@ package genetic_algorithm {
 
     class Chromosome(val size: Int, val costMatrix: Array[Array[Double]]) {
 
-        var content = Array.ofDim[Int](size)
-        var fit: Double = -1
+        val content = Array.ofDim[Int](size)
         // Knuth shuffles ~ Random Permutation
         // ref: https://en.wikipedia.org/wiki/Random_permutation
 
@@ -30,38 +29,33 @@ package genetic_algorithm {
 
         def copy() : Chromosome = {
             val chrom = new Chromosome(size, costMatrix)
-            chrom.content = content.clone()
+            val copiedContent = content.clone()
+            (0 until size).foreach(index => chrom.content(index) = copiedContent(index))
             return(chrom)
         }
         
         // returns path as string
         def path(delimiter: String = " -> ") : String = {
-            var out = ""
-            for(i <- 0 to size-2) {
-                out += content(i).toString() + delimiter
-            }
-            out += content(size-1).toString() + delimiter + content(0).toString();
-            return(out)
+            (0 until size-1).foldLeft("") {
+                (acc, index) => acc + content(index).toString() + delimiter
+            } + content(size-1).toString() + delimiter + content(0).toString();
         }
 
         // calculates fitness using cost matrix
         def fitness() : Double = {
-            // If fitness was already calculated then there is no need to calculate again
-            if(this.fit == -1) {
-                this.fit = 0
-                for(i <- 0 to size-2) {
-                    this.fit += costMatrix(content(i))(content(i+1))
-                }
-                this.fit += costMatrix(content(size-1))(content(0))
+            (0 until size).foldLeft(0.0) {
+                (acc, index) => 
+                    if (index != size-1) (acc + costMatrix(content(index))(content(index+1)))
+                    else (acc + costMatrix(content(size-1))(content(0)))
             }
-            return(this.fit)
         }
 
         def normalize() : Unit = {
             if(content(0) != 0) {
                 for(i <- 0 until size) {
                     if(content(i) == 0) {
-                        content = content.drop(i) ++ content.take(i)
+                        val normalizedContent = content.drop(i) ++ content.take(i)
+                        (0 until size).foreach(index => content(index) = normalizedContent(index))
                         return()
                     }
                 }
@@ -84,7 +78,7 @@ package genetic_algorithm {
         
         val chromosomeSize = costMatrix.size
         val elitesCnt: Int = (populationSize*elitismRatio).toInt
-        var atomicIndex: AtomicInteger = new AtomicInteger(elitesCnt/2)
+        val atomicIndex: AtomicInteger = new AtomicInteger(elitesCnt/2)
 
         if(tournamentSize > populationSize) {
             println("Tournament size(" + tournamentSize.toString() + ") is bigger than population size(" + populationSize.toString() + "). Reducing tournament size to population size.")
@@ -94,12 +88,8 @@ package genetic_algorithm {
         def compare(a: Chromosome, b: Chromosome) = a.fitness() compare b.fitness()
 
         def initPopulation(size: Int) : Array[Chromosome] = {
-            var newPopulation = Array.ofDim[Chromosome](populationSize)
-            
-            for(i <- 0 until populationSize) {
-                newPopulation(i) = new Chromosome(size, costMatrix)
-            }
-
+            val newPopulation = Array.ofDim[Chromosome](populationSize)
+            (0 until populationSize).foreach(index => newPopulation(index) = new Chromosome(size, costMatrix))
             return(newPopulation)
         }
 
