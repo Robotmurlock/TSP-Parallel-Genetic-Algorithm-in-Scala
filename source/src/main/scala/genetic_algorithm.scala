@@ -96,21 +96,19 @@ package genetic_algorithm {
                 val r: Int = Global.random.nextInt(populationSize-1)
                 randomArray(i) = population(r)
             }
-            val bestChromosomeIndex = {
-                val indexedRandomArray = randomArray zip (1 until tournamentSize)
-                val initialMinimum = randomArray(0)
-                val initialIndex   = 0
-                val initial = (initialMinimum, initialIndex)
-                indexedRandomArray.fold(initial) {
-                    (acc, next) => {
-                        val currentBestChromosome = acc._1
-                        val currentBestFitness    = currentBestChromosome.fitness()
-                        val nextChromosome        = next._1
-                        val nextFitness           = nextChromosome.fitness()
-                        if (nextFitness < currentBestFitness) next else acc
-                    }
-                }._2
+            val indexedRandomArray = randomArray zip (1 until tournamentSize)
+            val initialMinimum     = randomArray(0)
+            val initialIndex       = 0
+            val resultMinIndex =indexedRandomArray.fold((initialMinimum, initialIndex)) {
+                (acc, next) => {
+                    val (currentBestChromosome, _) = acc
+                    val currentBestFitness         = currentBestChromosome.fitness()
+                    val (nextChromosome, _)        = next
+                    val nextFitness                = nextChromosome.fitness()
+                    if (nextFitness < currentBestFitness) next else acc
+                }
             }
+            val (_, bestChromosomeIndex) = resultMinIndex
             population(bestChromosomeIndex)
         }
 
@@ -138,8 +136,7 @@ package genetic_algorithm {
 
             ((secondRandom until p1.size) ++ (0 until secondRandom)).foldLeft(initial) {
                 (acc, index) => {
-                    val c1Index = acc._1
-                    val c2Index = acc._2
+                    val (c1Index, c2Index) = acc
 
                     val c1IndexNext = if (c1Used contains p1.content(index)) c1Index
                                       else {
