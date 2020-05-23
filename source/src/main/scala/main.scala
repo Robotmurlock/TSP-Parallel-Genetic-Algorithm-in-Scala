@@ -141,7 +141,7 @@ object Main extends JFXApp{
             
             val generationStep = ga.maxIterations/10
             
-            var order = ArrayBuffer[Int]()
+            val order = ArrayBuffer[Int]()
             
             //loading order of 1 generation at a time
             if(iterLine.hasNext) {
@@ -183,7 +183,7 @@ object Main extends JFXApp{
             val salesmanMov = new Vect(0, 0)
 
 			//indicator for the cities help determianting the color on the map
-            var visitedCities = ArrayBuffer[Boolean]()
+            val visitedCities = ArrayBuffer[Boolean]()
             
             for(i <- 0 to points.size - 1) {
                 visitedCities += false
@@ -207,7 +207,7 @@ object Main extends JFXApp{
                 gc.drawImage(img, 0, 0)
                 //transition to the display of next generation
                 if(visited == order.size){
-                    order = ArrayBuffer[Int]()
+                    order.clear()
                 
                     
                     visited = 0
