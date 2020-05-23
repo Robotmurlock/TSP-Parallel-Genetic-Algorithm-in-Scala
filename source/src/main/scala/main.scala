@@ -89,15 +89,13 @@ object Main extends JFXApp{
     val salesman = new Vect(0, 0)
     //Find a city with given index from the input file
     def findCity(cities: ArrayBuffer[Vect], index: Int) : Vect = {
-        for(c <- cities ){
-            if(c.index == index){
-            val found = new Vect(c.x, c.y)  
-            found.named(c.name)
-            found.setIndex(index)
-            return found
-            }
+        cities.foldLeft(new Vect(-1, -1)) {
+            (acc, city) => 
+                if (city.index == index)
+                    new Vect(city.x, city.y, city.name, index)  
+                else 
+                    acc
         }
-        return new Vect(-1, -1)
     }
 	
     stage = new JFXApp.PrimaryStage {
