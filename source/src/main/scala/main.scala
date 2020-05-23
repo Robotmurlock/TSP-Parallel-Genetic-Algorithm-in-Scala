@@ -164,8 +164,14 @@ object Main extends JFXApp{
             for (line <- Source.fromFile(filename).getLines.drop(1)) {
                 val coordinates = line.split(',').map(_.trim)
                 points += new Vect((coordinates(1).toDouble/imageWidth)*sceneWidth, (coordinates(2).toDouble/imageHeight)*sceneHeight)
-                points.last.named(coordinates(0))
-                points.last.setIndex(coordinates(3).toInt)
+                
+                val lastPointOption: Option[Vect] = points.lastOption
+                val lastPoint: Vect = lastPointOption match {
+                    case Some(value) => value
+                    case _           => throw new Exception("City file is empty!")
+                }
+                lastPoint.named(coordinates(0))
+                lastPoint.setIndex(coordinates(3).toInt)
             }
             
             
