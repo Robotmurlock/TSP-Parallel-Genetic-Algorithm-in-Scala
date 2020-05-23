@@ -5,13 +5,21 @@ import java.util.Scanner
 import java.io.File
 
 package reader {
-    object CSVReader{
-        def read(file: String) : Array[Array[Double]] = {
+    object Utility {
+        def getHeaderAndLines(file : String) : (String, List[String]) = {
             implicit val codec = Codec("UTF-8")
             codec.onMalformedInput(CodingErrorAction.REPLACE)
             codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
             val bufferedSource = io.Source.fromFile(file)
             val header :: lines = bufferedSource.getLines().toList
+
+            (header, lines)
+        }
+    }
+
+    object CSVReader{
+        def read(file: String) : Array[Array[Double]] = {
+            val (header, lines) = Utility.getHeaderAndLines(file)
             val delimiter = "" + header(0)
             val headerColumns = header.split(delimiter).map(_.trim)
             val costMatrix: Array[Array[Double]] = Array.ofDim[Double](headerColumns.size - 1, headerColumns.size - 1)
@@ -28,12 +36,8 @@ package reader {
     }
 
     object TXTReader {
-        def read(file: String) : Array[Array[Double]] = {  
-            implicit val codec = Codec("UTF-8")
-            codec.onMalformedInput(CodingErrorAction.REPLACE)
-            codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
-            val bufferedSource = io.Source.fromFile(file)
-            val header :: lines = bufferedSource.getLines().toList
+        def read(file: String) : Array[Array[Double]] = { 
+            val (header, lines) = Utility.getHeaderAndLines(file) 
             val dimension = header.toInt
             val costMatrix = Array.ofDim[Double](dimension, dimension)
             for ((line, rowIndex) <- lines zip (0 until lines.size)) {
