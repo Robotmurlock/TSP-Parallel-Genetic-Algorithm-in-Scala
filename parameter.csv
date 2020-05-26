@@ -1,2 +1,2 @@
 costMatrix, cities, image, populationSize, maxIterations, tournamentSize, elitismRate, mutationRate, numOfThreads
-"Srbija2.csv", "cities.csv", "srbija.jpg", 100, 5, 20, 0.2, 0.01, 20
+"Srbija2.csv", "cities.csv", "srbija.jpg", 1000, 100, 20, 0.2, 0.01, 10

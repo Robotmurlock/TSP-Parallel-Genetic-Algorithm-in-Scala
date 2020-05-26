@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/main.scala:170:26: constructor cannot be instantiated to expected type;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Some[A][0m
-[0m[[0m[31merror[0m] [0m[0m required: Vect[0m
-[0m[[0m[31merror[0m] [0m[0m                    case Some(value) => value[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/mokoyo/Desktop/Faks34/PP/2020_ParGenAlg/source/src/main/scala/genetic_algorithm.scala:246:29: not found: value startTime[0m
+[0m[[0m[31merror[0m] [0m[0m            val interval = (startTime - endTime) / 1e9[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

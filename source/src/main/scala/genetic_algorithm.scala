@@ -213,6 +213,8 @@ package genetic_algorithm {
         }
 
         def run() : Unit = {
+            val startTime = System.nanoTime  
+
             val population: Array[Chromosome] = initPopulation(chromosomeSize)
             val data: Array[Chromosome] = Array.ofDim[Chromosome](maxIterations)
 
@@ -240,6 +242,9 @@ package genetic_algorithm {
             }
 
             resultsToCsv(data)
+            val endTime = System.nanoTime  
+            val interval = (endTime - startTime) / 1e9
+            println("Optimization time: " + interval + "\n")
         }
     }
 }

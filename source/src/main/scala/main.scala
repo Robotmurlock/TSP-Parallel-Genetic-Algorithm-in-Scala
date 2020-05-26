@@ -33,7 +33,8 @@ object Main extends JFXApp{
         "tournamentSize" -> "20",
         "elitismRate"    -> "0.2",
         "mutationRate"   -> "0.01",
-        "numOfThreads"   -> "10"
+        "numOfThreads"   -> "10",
+        "animation"      -> "true"
     )
 
     def safeGet(parametersMap: Map[String, String], key: String) : String = {
