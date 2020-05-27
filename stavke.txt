@@ -1,7 +1,0 @@
-[FIF] 1. Predstavljanje (SCALA i TSP)
-[JOV] 2. Kako se definise problem (Srbija.csv, cities.csv, Srbija.png)
-         cities.csv ~ lokacije gradova na mapi Srbija.png
-         Srbija.csv ~ matrica cena  
-[FIF] 3. Pokretanje i objasnjavanje sta se desava
-[MOM] 4. Promena parametara (parameter.csv)
-[MOM] 5. Rezultati (results.csv)
